@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Terápiás Radix Modell</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100vh - 50px);
+    }
+
+    .sidebar {
+      width: 260px;
+      background-color: #ffffff;
+      border-right: 1px solid #ccc;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 16px;
+      margin-top: 0;
+    }
+
+    .sidebar-section-title {
+      font-size: 13px;
+      font-weight: bold;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: #444;
+    }
+
+    .menu-item {
+      padding: 6px 8px;
+      margin-bottom: 3px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    .menu-item:hover {
+      background-color: #eee;
+    }
+
+    .menu-item.active {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .content-top {
+      padding: 15px;
+      border-bottom: 1px solid #ccc;
+      background-color: #fafafa;
+    }
+
+    .content-main {
+      padding: 15px;
+      overflow-y: auto;
+    }
+
+    .content-title {
+      font-size: 18px;
+      margin: 0 0 5px 0;
+    }
+
+    .content-subtitle {
+      font-size: 13px;
+      color: #666;
+      margin: 0;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      font-size: 14px;
+      line-height: 1.5;
+      padding-left: 20px;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .note {
+      background-color: #fff8e5;
+      border-left: 4px solid #f1b400;
+      padding: 8px 10px;
+      margin: 10px 0;
+      font-size: 13px;
+    }
+
+    details {
+      margin-bottom: 10px;
+      background-color: #ffffff;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      padding: 6px 8px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    summary::marker {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Terápiás Radix Modell – Belső Tónus</h1>
+</header>
+
+<div class="container">
+  <div class="sidebar">
+    <h2>Diagnózisok és tartalom</h2>
+
+    <div class="sidebar-section-title">Általános ismertető</div>
+    <div class="menu-item active" data-item="modell-letrejotte">A modell létrejötte</div>
+    <div class="menu-item" data-item="modell-hasznalata">A modell használata</div>
+    <div class="menu-item" data-item="gyakorlati-pelda-altalanos">Gyakorlati példa – általános</div>
+    <div class="menu-item" data-item="gyakorlati-nyaki-fejfajas">Gyakorlati eset – nyaki eredetű fejfájás</div>
+
+    <div class="sidebar-section-title">Neurológiai példák</div>
+    <div class="menu-item" data-item="gyakorlati-stroke-vall">Gyakorlati eset – vállövi mozgásbeszűkülés stroke után</div>
+
+    <div class="sidebar-section-title">Diagnózis-csoportok (helyőrző)</div>
+    <div class="menu-item" data-item="diagnoszis-nyaki">Nyaki eredetű fájdalmak, fejfájás</div>
+    <div class="menu-item" data-item="diagnoszis-vallovi">Vállövi problémák</div>
+    <div class="menu-item" data-item="diagnoszis-gerinc">Gerincproblémák</div>
+    <div class="menu-item" data-item="diagnoszis-neurologiai">Neurológiai állapotok</div>
+    <div class="menu-item" data-item="diagnoszis-egyeb">Egyéb állapotok</div>
+  </div>
+
+  <div class="content">
+    <div class="content-top">
+      <h2 class="content-title" id="content-title">A modell létrejötte</h2>
+      <p class="content-subtitle" id="content-subtitle">
+        Általános ismertető – a Terápiás Radix Modell szakmai háttere és célja.
+      </p>
+    </div>
+    <div class="content-main" id="content-main">
+      <!-- Ide kerül a dinamikus tartalom -->
+    </div>
+  </div>
+</div>
+
+<script>
+  const contentData = {
+    "modell-letrejotte": {
+      title: "A modell létrejötte",
+      subtitle: "Miért készült el a Terápiás Radix Modell, és milyen szemléletet képvisel.",
+      html: `
+        <h3>A Terápiás Radix Modell létrejötte</h3>
+        <p>
+          A Terápiás Radix Modell azért jött létre, hogy a masszőrök számára egységes,
+          diagnózis-alapú szemléletet adjon a különböző mozgásszervi és neurológiai állapotok
+          kezeléséhez. A gyakorlatban gyakran előfordul, hogy a masszőr bizonytalan abban,
+          mit szabad, mit nem, milyen sorrendben érdemes dolgozni, vagy hogyan lehet
+          biztonságosan kezelni egy összetettebb állapotot. A modell ezt a hiányt pótolja.
+        </p>
+        <p>
+          A rendszer az izomtónus, a testtartás és a mozgásminták összefüggéseire épül.
+          A hangsúly azon van, hogy a masszőr a kezelőágy mellett gyorsan és egyértelműen
+          eligazodjon: mi feszes, mi gyenge, mi fájdalmas, mi kompenzál, és mit kell óvni.
+          A modell minden diagnózisnál ugyanazokat az alapelveket követi, így könnyen
+          megtanulható és következetesen alkalmazható.
+        </p>
+        <p>
+          A program célja nem az orvosi diagnózis helyettesítése, hanem a masszőr gyakorlati
+          munkájának támogatása. A rendszer biztonságos keretet ad, csökkenti a bizonytalanságot,
+          és segít abban, hogy a kezelések átgondoltak és felelősségteljesek legyenek.
+        </p>
+        <p>
+          A program technikai alapja egy egyszerű, böngészőben futó HTML-alapú felület,
+          amelyet JavaScript és CSS egészít ki. A működő program a Copilot segítségével
+          készült el, a modell szakmai tartalmára építve.
+        </p>
+        <details>
+          <summary>Megjegyzés beavatott felhasználóknak</summary>
+          <p>
+            A modell célja nem az, hogy mindent lefedjen, hanem hogy egységes gondolkodási
+            keretet adjon. Aki a tónuslogikát és a biomechanikai összefüggéseket érti,
+            a rendszert rugalmasan tudja alkalmazni saját gyakorlatában is.
+          </p>
+        </details>
+      `
+    },
+
+    "modell-hasznalata": {
+      title: "A modell használata",
+      subtitle: "Hogyan dolgozik a masszőr a Terápiás Radix Modell alapján a gyakorlatban.",
+      html: `
+        <h3>A modell használata</h3>
+        <p>
+          A Terápiás Radix Modell használata egyszerű és gyakorlati szemléletű. A rendszer célja,
+          hogy a masszőr a kezelőágy mellett gyorsan eligazodjon, és egyértelmű irányelveket
+          kapjon az adott állapot kezeléséhez.
+        </p>
+        <p>
+          A bal oldali menüben található a diagnózisok listája. A megfelelő állapot kiválasztása után
+          a jobb oldalon megjelenik a részletes leírás, amely tartalmazza:
+        </p>
+        <ul>
+          <li>az állapot rövid összefoglalását,</li>
+          <li>a masszázs célját,</li>
+          <li>a javasolt kezelési irányelveket,</li>
+          <li>a kerülendő technikákat,</li>
+          <li>szükség esetén kiegészítő megjegyzéseket.</li>
+        </ul>
+        <p>
+          A modell minden diagnózisnál ugyanazt a logikát követi: mi feszes, mi gyenge,
+          mi fájdalmas, mi kompenzál, és mit kell óvni. Ez a szerkezet segít abban, hogy
+          a masszőr gyorsan átlássa a helyzetet, és ne maradjon bizonytalanság a kezelés során.
+        </p>
+        <p>
+          A diagnózisok alatt külön szerepel a Kezelési fázisok összefoglalója és a
+          „Mit szabad – Mit nem” protokoll. Ez a két rész minden állapotnál érvényes,
+          és különösen hasznos, ha a masszőr nem biztos abban, hogyan kezdjen hozzá
+          a kezeléshez, vagy milyen technikákat kell kerülnie.
+        </p>
+        <p>
+          A modell használata nem igényel előzetes technikai tudást. A rendszer célja,
+          hogy a masszőr munkáját támogassa, csökkentse a bizonytalanságot, és biztonságos,
+          következetes kezelési szemléletet adjon.
+        </p>
+      `
+    },
+
+    "gyakorlati-pelda-altalanos": {
+      title: "Gyakorlati példa – általános kezelési folyamat",
+      subtitle: "Egy általános vállövi példa a modell gondolkodásmódjára.",
+      html: `
+        <h3>Gyakorlati példa – hogyan néz ki egy kezelés a modell alapján</h3>
+        <p>
+          A következő példa azt mutatja be, hogyan alkalmazható a Terápiás Radix Modell
+          egy valós helyzetben. A cél nem az, hogy minden részletet lefedjen, hanem hogy
+          megmutassa a gondolkodásmódot és a kezelési sorrendet.
+        </p>
+        <p><strong>Példaállapot:</strong> vállövi fájdalom és mozgásbeszűkülés,
+          amely egy korábbi gyulladás vagy túlterhelés után maradt vissza.</p>
+
+        <p><strong>1. Állapotfelmérés</strong><br>
+          A masszőr megfigyeli a testtartást, a váll helyzetét, a mozgástartományt és
+          a fájdalmas területeket. A tónusviszonyok alapján látható, hogy a vállövi izmok
+          egy része feszes, más része gyenge, és a mozgás beszűkült.
+        </p>
+
+        <p><strong>2. Diagnózis kiválasztása a programban</strong><br>
+          A bal oldali menüből kiválasztjuk a megfelelő állapotot. A jobb oldalon megjelenik
+          a kezelési logika: mit lazítunk, mit óvunk, mit aktiválunk.
+        </p>
+
+        <p><strong>3. A kezelési irányelvek áttekintése</strong><br>
+          A program jelzi, hogy a feszes területeken lassú, kíméletes technikák javasoltak,
+          a gyenge területeken pedig finom aktiválás. A fájdalmas vagy gyulladt részeket
+          kerülni kell.
+        </p>
+
+        <p><strong>4. A kezelés megtervezése</strong><br>
+          A masszőr a program alapján felépíti a kezelési sorrendet:
+        </p>
+        <ul>
+          <li>először a feszes izmok oldása,</li>
+          <li>majd a kompenzációk csökkentése,</li>
+          <li>végül a gyenge területek aktiválása.</li>
+        </ul>
+
+        <p><strong>5. A kezelés kivitelezése</strong><br>
+          A masszőr lassú, kíméletes technikákkal kezdi a feszes területeken.
+          A kompenzáló izmok oldása után finom aktiváló fogások következnek
+          a gyenge területeken. A fájdalmas területet óvatosan, kerülve kezeli.
+        </p>
+
+        <p><strong>6. Ellenőrzés és visszajelzés</strong><br>
+          A kezelés végén a masszőr újra megnézi a mozgástartományt és a tónusviszonyokat.
+          Ha szükséges, a következő alkalommal módosítja a kezelési sorrendet.
+        </p>
+
+        <p>
+          Ez a példa jól mutatja, hogyan segít a modell abban, hogy a masszőr átgondoltan,
+          biztonságosan és következetesen dolgozzon, még összetettebb állapotok esetén is.
+        </p>
+      `
+    },
+
+    "gyakorlati-stroke-vall": {
+      title: "Gyakorlati eset – vállövi mozgásbeszűkülés stroke után",
+      subtitle: "Konkrét neurológiai eset a modell szemléletével.",
+      html: `
+        <h3>Gyakorlati eset – vállövi mozgásbeszűkülés stroke után</h3>
+        <p><strong>Kliens:</strong> 62 éves férfi, fél évvel korábbi stroke után.<br>
+           <strong>Panasz:</strong> a jobb váll fájdalmas, a mozgástartomány beszűkült,
+           a kar emelése nehézkes.<br>
+           <strong>Tónusviszony:</strong> a vállövi izmok egy része feszes (felső trapéz,
+           levator scapulae), más része gyenge (alsó trapéz, rotátorköpeny),
+           a lapocka mozgása korlátozott.
+        </p>
+
+        <p><strong>1. Állapotfelmérés</strong><br>
+          A masszőr megfigyeli a testtartást: a váll felhúzott, a lapocka rögzült,
+          a kar emelése fájdalmas. A tónusvizsgálat alapján a felső szakasz túlműködik,
+          az alsó szakasz alulműködik.
+        </p>
+
+        <p><strong>2. Diagnózis kiválasztása a programban</strong><br>
+          A bal oldali menüből kiválasztjuk a stroke utáni vállövi problémákra vonatkozó részt.
+          A program megmutatja, mely területek feszesek, melyek gyengék, és mit kell óvni.
+        </p>
+
+        <p><strong>3. A kezelési logika áttekintése</strong><br>
+          A program jelzi, hogy a feszes területeken lassú, kíméletes oldás szükséges,
+          a gyenge területeken pedig finom aktiválás. A fájdalmas részeket kerülni kell,
+          a lapocka mozgását óvatosan kell visszaépíteni.
+        </p>
+
+        <p><strong>4. A kezelés megtervezése</strong><br>
+          A masszőr a program alapján felépíti a kezelést:
+        </p>
+        <ul>
+          <li>először a feszes izmok oldása (felső trapéz, levator),</li>
+          <li>majd a lapocka körüli kompenzációk csökkentése,</li>
+          <li>végül a gyenge területek aktiválása (alsó trapéz, rotátorköpeny).</li>
+        </ul>
+
+        <p><strong>5. A kezelés kivitelezése</strong><br>
+          A masszőr lassú, kíméletes technikákkal kezdi a feszes területeken.
+          A lapocka mozgását óvatos mobilizációval segíti. A gyenge területeket
+          finom aktiváló fogásokkal kezeli, kerülve a fájdalmas szöveteket.
+          A kar emelését nem erőlteti, csak a fájdalomhatárig engedi.
+        </p>
+
+        <p><strong>6. Ellenőrzés</strong><br>
+          A kezelés végén a masszőr újra megnézi a mozgástartományt.
+          A váll kissé szabadabb, a lapocka mozgása javult.
+          A következő alkalommal a program alapján módosítja
+          a kezelési sorrendet, ha szükséges.
+        </p>
+
+        <p>
+          Ez az eset jól mutatja, hogyan segít a modell abban, hogy a masszőr
+          biztonságosan, átgondoltan és következetesen dolgozzon egy összetett
+          neurológiai állapotnál is.
+        </p>
+      `
+    },
+
+    "gyakorlati-nyaki-fejfajas": {
+      title: "Gyakorlati eset – nyaki eredetű fejfájás",
+      subtitle: "Konkrét, gyakori állapot a Radix szemléletével.",
+      html: `
+        <h3>Gyakorlati eset – nyaki eredetű fejfájás</h3>
+        <p><strong>Kliens:</strong> 38 éves nő, ülőmunkát végez.<br>
+           <strong>Panasz:</strong> visszatérő fejfájás, amely a tarkótól indul, és a halánték felé sugárzik.
+           A fej mozgatása feszülést okoz, a nyak hátsó része érzékeny.<br>
+           <strong>Tónusviszony:</strong> a nyak hátsó izmai feszesek (suboccipitalis csoport, felső trapéz),
+           a mély nyakizmok gyengék, a vállövi tartás előreesett.
+        </p>
+
+        <p><strong>1. Állapotfelmérés</strong><br>
+          A masszőr megfigyeli a testtartást: előrehelyezett fej, feszes tarkó, vállak előreesve.
+          A tónusvizsgálat alapján a nyak hátsó szakasza túlműködik, a mély stabilizáló izmok
+          alulműködnek. A fej hátrahajtása feszülést, oldalra fordítása enyhe fájdalmat okoz.
+        </p>
+
+        <p><strong>2. Diagnózis kiválasztása a programban</strong><br>
+          A bal oldali menüből kiválasztjuk a nyaki eredetű fejfájásra vonatkozó részt.
+          A program megmutatja, mely területek feszesek, melyek gyengék, és mit kell óvni.
+        </p>
+
+        <p><strong>3. A kezelési logika áttekintése</strong><br>
+          A program jelzi, hogy a feszes területeken lassú, kíméletes oldás szükséges,
+          a gyenge területeken pedig finom aktiválás. A fájdalmas pontokat kerülni kell,
+          a suboccipitalis területet óvatosan kell kezelni.
+        </p>
+
+        <p><strong>4. A kezelés megtervezése</strong><br>
+          A masszőr a program alapján felépíti a kezelést:
+        </p>
+        <ul>
+          <li>először a tarkó és a felső trapéz lassú oldása,</li>
+          <li>majd a vállövi kompenzációk csökkentése,</li>
+          <li>végül a mély nyakizmok finom aktiválása.</li>
+        </ul>
+
+        <p><strong>5. A kezelés kivitelezése</strong><br>
+          A masszőr lassú, kíméletes technikákkal kezdi a tarkó környékén.
+          Kerüli a túl erős nyomást a suboccipitalis területen.
+          A vállövi izmokat oldja, hogy csökkenjen a nyak terhelése.
+          A mély nyakizmokat finom aktiváló fogásokkal kezeli, kerülve a fájdalmas mozdulatokat.
+          A fej mozgatását nem erőlteti, csak a fájdalomhatárig engedi.
+        </p>
+
+        <p><strong>6. Ellenőrzés</strong><br>
+          A kezelés végén a masszőr újra megnézi a fej mozgástartományát.
+          A tarkó feszülése csökkent, a fej oldalra fordítása könnyebb.
+          A következő alkalommal a program alapján módosítja a kezelési sorrendet, ha szükséges.
+        </p>
+
+        <p>
+          Ez az eset jól mutatja, hogyan segít a modell abban, hogy a masszőr
+          biztonságosan és következetesen dolgozzon egy gyakori, de sokszor félrekezelt állapotnál.
+        </p>
+      `
+    },
+
+    "diagnoszis-nyaki": {
+      title: "Diagnózis-csoport: nyaki eredetű fájdalmak, fejfájás",
+      subtitle: "Strukturált gondolkodás nyaki eredetű panaszoknál.",
+      html: `
+        <h3>Nyaki eredetű fájdalmak és fejfájás – diagnózis-csoport</h3>
+        <p>
+          Ebben a diagnózis-csoportban a nyaki szakaszból kiinduló fájdalmak, fejfájások,
+          feszülések tartoznak. A közös pont a tónuseltolódás a nyak hátsó és elülső
+          izomcsoportjai között, valamint a vállövi tartás szerepe.
+        </p>
+        <p>
+          A részletes, diagnózis-specifikus leírásokat a modell későbbi verziói tartalmazzák.
+          A gondolkodási keret azonban már most alkalmazható: mi feszes, mi gyenge,
+          mi fájdalmas, mi kompenzál, és mit kell óvni.
+        </p>
+      `
+    },
+
+    "diagnoszis-vallovi": {
+      title: "Diagnózis-csoport: vállövi problémák",
+      subtitle: "Általános keret a vállövi állapotokhoz.",
+      html: `
+        <h3>Vállövi problémák – diagnózis-csoport</h3>
+        <p>
+          Ide tartoznak a vállövi fájdalmak, mozgásbeszűkülések, túlterheléses állapotok,
+          gyulladások utáni maradványtünetek. A közös elem a lapocka helyzete, a felső
+          és alsó trapéz viszonya, valamint a rotátorköpeny szerepe.
+        </p>
+        <p>
+          A részletes diagnózisok (pl. befagyott váll, impingement, posztoperatív állapot)
+          külön-külön kerülnek kibontásra. A modell célja, hogy a masszőr ugyanazon
+          logika szerint gondolkodjon minden ilyen esetnél.
+        </p>
+      `
+    },
+
+    "diagnoszis-gerinc": {
+      title: "Diagnózis-csoport: gerincproblémák",
+      subtitle: "Általános keret a gerinc különböző állapotaihoz.",
+      html: `
+        <h3>Gerincproblémák – diagnózis-csoport</h3>
+        <p>
+          Ebbe a csoportba tartoznak a lumbágós tünetek, degeneratív elváltozások,
+          tartáshibák, Bechterew-kór és más, a gerincet érintő állapotok.
+          A Radix Modell itt is a tónusmintákra és kompenzációkra épít.
+        </p>
+        <p>
+          A részletes, diagnózis-specifikus protokollok a modell későbbi fejlesztési fázisaiban
+          jelennek meg. A gondolkodás alapja azonban már most használható a mindennapi
+          masszőri gyakorlatban.
+        </p>
+      `
+    },
+
+    "diagnoszis-neurologiai": {
+      title: "Diagnózis-csoport: neurológiai állapotok",
+      subtitle: "Stroke, Parkinson és egyéb neurológiai kórképek tónuslogikája.",
+      html: `
+        <h3>Neurológiai állapotok – diagnózis-csoport</h3>
+        <p>
+          Ide tartoznak a stroke utáni állapotok, Parkinson-kór, egyes bénulásos
+          vagy tónuseltolódással járó kórképek. A fókusz nem az orvosi részleteken,
+          hanem a biztonságos masszőri megközelítésen van.
+        </p>
+        <p>
+          A modell kiemelten kezeli a spasztikus és hipotón területek arányát,
+          a kompenzációkat, és azt, hogy a masszőr mit tehet biztonságosan, és mit nem.
+        </p>
+      `
+    },
+
+    "diagnoszis-egyeb": {
+      title: "Diagnózis-csoport: egyéb állapotok",
+      subtitle: "Egyéb, a rendszerhez kapcsolódó kórképek számára fenntartott hely.",
+      html: `
+        <h3>Egyéb állapotok – diagnózis-csoport</h3>
+        <p>
+          Ebbe a csoportba azok az állapotok kerülnek, amelyek nem illeszkednek szorosan
+          a főbb diagnózis-csoportokba, de a Radix Modell szemléletével jól kezelhetők.
+        </p>
+        <p>
+          A részletes leírások a rendszer további bővítése során válnak elérhetővé.
+        </p>
+      `
+    }
+  };
+
+  function loadContent(key) {
+    const data = contentData[key];
+    if (!data) return;
+    document.getElementById("content-title").textContent = data.title;
+    document.getElementById("content-subtitle").textContent = data.subtitle;
+    document.getElementById("content-main").innerHTML = data.html;
+
+    document.querySelectorAll(".menu-item").forEach(item => {
+      item.classList.remove("active");
+    });
+    const activeItem = document.querySelector('.menu-item[data-item="' + key + '"]');
+    if (activeItem) {
+      activeItem.classList.add("active");
+    }
+  }
+
+  document.querySelectorAll(".menu-item").forEach(item => {
+    item.addEventListener("click", () => {
+      const key = item.getAttribute("data-item");
+      loadContent(key);
+    });
+  });
+
+  loadContent("modell-letrejotte");
+</script>
+</body>
+</html>
