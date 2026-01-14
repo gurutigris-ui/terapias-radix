@@ -316,8 +316,6 @@ const contents = {
     <li>Medence stabilizáció</li>
     <li>Alsó tónus tehermentesítése</li>
     <li>Mély tónus bevonása járásban</li>
-  </ul>
-`,
 
 "Mély tónus": `
   <h2>Mély tónus – B1 összefoglaló</h2>
@@ -411,55 +409,8 @@ const contents = {
   <h3>A B1 szint lényege</h3>
   <p><strong>A felszíni tónusok túlterhelődnek, mert a mély tónus nem tart.</strong></p>
 `,
+};
 
-  <h3>Gyakori panaszok</h3>
-  <ul>
-    <li>Térd körüli feszülés</li>
-    <li>Vádli húzó érzés</li>
-    <li>Boka instabilitás</li>
-    <li>Lábboltozat süllyedésből eredő panaszok</li>
-    <li>Hosszabb állás utáni fáradtság, merevség</li>
-    <li>Achilles-ín körüli feszülés</li>
-  </ul>
-
-  <h3>Jellegzetes tünetek</h3>
-  <ul>
-    <li>Térd befelé esése (valgus)</li>
-    <li>Boka túlmozgása vagy merevsége</li>
-    <li>Vádli feszessége</li>
-    <li>Lábboltozat gyengesége</li>
-    <li>Alsó tónus túlterhelése járáskor</li>
-    <li>Instabil alsó végtagi tengely</li>
-  </ul>
-
-  <h3>Tónuskapcsolatok</h3>
-  <ul>
-    <li>Alsó tónus dominancia</li>
-    <li>Mély tónus gyengesége</li>
-    <li>Középső tónus kompenzáció járáskor</li>
-    <li>Térd–boka tengely terhelési zavara</li>
-  </ul>
-
-  <h3>Masszőr‑irányelvek</h3>
-  <ul>
-    <li>Vádli és hamstring finom lazítása</li>
-    <li>Térd körüli lágyrészek kíméletes oldása</li>
-    <li>Boka mobilizáció óvatosan</li>
-    <li>Lábboltozat támogatása indirekt technikákkal</li>
-    <li>Alsó tónus tehermentesítése</li>
-    <li>Mély tónus aktiválásának előkészítése</li>
-  </ul>
-
-  <h3>Terápiás fókusz</h3>
-  <ul>
-    <li>Boka–térd tengely stabilizáció</li>
-    <li>Lábboltozat funkcionális aktiválása</li>
-    <li>Mély tónus bevonása járásban</li>
-    <li>Alsó tónus terhelésének csökkentése</li>
-    <li>Funkcionális mozgástartomány javítása</li>
-  </ul>
-`,
-}; 
 const menu = document.getElementById("menu");
 const content = document.getElementById("content");
 
@@ -469,10 +420,12 @@ Object.keys(contents).forEach(key => {
   btn.onclick = () => content.innerHTML = contents[key];
   menu.appendChild(btn);
 });
+
 </script>
 
 </body>
 </html>
+
 
 
 
