@@ -1,3 +1,73 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Terápiás Radix – B1 összefoglaló</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      background: #f9f9f9;
+    }
+    select {
+      font-size: 1em;
+      padding: 0.5em;
+      margin-bottom: 1em;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #fff;
+      padding: 1em;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Terápiás Radix – B1 összefoglaló</h1>
+
+  <label for="temaValaszto">Válassz témát:</label>
+  <select id="temaValaszto">
+    <option value="">– válassz –</option>
+  </select>
+
+  <pre id="szovegBlokk"></pre>
+
+  <script>
+    const contents = {
+      "fej-nyak": `FEJ-NYAK RÉGIÓ – B1 ÖSSZEFOGLALÓ\n\nGyakori panaszok:\n– Tarkótáji feszülés, tenziós fejfájás\n– Nyaki merevség, mozgásbeszűkülés\n– Vállövi feszülés, lapockába sugárzó húzó érzés\n\nTünetek:\n– Előretolt fejtartás\n– Nyak–tarkó kötöttség\n– Fokozott felső tónus aktivitás\n\nTónuskapcsolatok:\n– Felső tónus túlműködés\n– Mély tónus gyengesége\n– Fej–nyak tengely instabilitása\n\nMasszőr‑szemlélet:\n– Nyak–tarkó finom, tiszteletteljes lazítása\n– Felső tónus tehermentesítése a középső tónus bevonásával\n– Fej pozíciójának indirekt rendezése`,
+      "vallov": `VÁLLÖV–KAR RÉGIÓ – B1 ÖSSZEFOGLALÓ\n\nGyakori panaszok:\n– Vállövi izomfeszülés\n– Impingement jellegű fájdalom\n– Rotátorköpeny túlterhelés\n– Lapockastabilitási zavar\n\nTünetek:\n– Vállba, karba sugárzó tompa fájdalom\n– Fájdalmas karoldalemelés\n– Lapockaközti feszülés\n\nTónuskapcsolatok:\n– Felső tónus túlműködés\n– Középső tónus gyengesége\n– Lapocka instabilitás\n\nMasszőr‑szemlélet:\n– Lapocka körüli lágyrészek oldása\n– Rotátorköpeny tehermentesítése\n– Vállöv ritmusának helyreállítása`,
+      "hat-kozeps": `HÁT KÖZÉPSŐ SZAKASZ – B1 ÖSSZEFOGLALÓ\n\nGyakori panaszok:\n– Lapockaközti feszülés\n– Mellkasi szakasz merevsége\n– Légzéskötöttség\n\nTünetek:\n– Fokozott háti kyphosis\n– Lapockák eltérő pozíciója\n– Felszínes mellkasi légzés\n\nTónuskapcsolatok:\n– Középső tónus túlműködés\n– Felső tónus kompenzációja\n– Mély tónus gyengesége\n\nMasszőr‑szemlélet:\n– Lapockaközti izmok lazítása\n– Bordakosár mobilizálása\n– Légzés ritmusának támogatása`,
+      "also-szektor": `ALSÓ SZAKASZ – B1 ÖSSZEFOGLALÓ\n\nGyakori panaszok:\n– Deréktáji feszülés\n– Lumbális túlterhelés\n– Csípő körüli kötöttség\n\nTünetek:\n– Elülső vagy hátsó medencebillenés\n– Derék–csípő átmenet instabilitása\n– Fokozott alsó tónus aktivitás\n\nTónuskapcsolatok:\n– Alsó tónus túlműködés\n– Mély tónus gyengesége\n– Láb szektor kompenzációja\n\nMasszőr‑szemlélet:\n– Derék tehermentesítése\n– Csípő körüli lágyrészek oldása\n– Medence ritmusának indirekt rendezése`,
+      "lab-szektor": `LÁB SZEKTOR – B1 ÖSSZEFOGLALÓ\n\nTartomány:\n– Térd, lábszár, boka, lábfej\n\nJellegzetes terhelési minták:\n– Térd körüli feszülés\n– Vádli túlműködés\n– Talpi fascia irritáció\n– Boka instabilitás érzése\n\nKapcsolódó tónusok:\n– Láb szektor túlterhelése\n– Alsó tónus kompenzációja\n– Csípő–térd–boka tengely eltolódása\n\nMasszőr‑szemlélet:\n– Vádli és lábszárizmok lazítása\n– Talpi fascia óvatos oldása\n– Térd körüli izmok kiegyensúlyozása\n– Boka körüli lágyrészek kíméletes kezelése`,
+      "fajdalomtipusok": `FÁJDALOMTÍPUSOK – B1 ÖSSZEFOGLALÓ\n\n1. Izomeredetű fájdalom\n– Tompa, húzó, feszülő jelleg\n– Terhelésre fokozódik, pihenésre enyhül\n\n2. Ízületi eredetű fájdalom\n– Mélyebb, szúróbb jelleg\n– Mozgástartomány beszűkülése\n\n3. Idegi eredetű fájdalom\n– Sugárzó, éles, villanó jelleg\n– Zsibbadás, bizsergés\n\n4. Fascia eredetű fájdalom\n– Szétszórt, nehezen lokalizálható\n– Testtartásfüggő, mozgásra változó\n\nMasszőr‑szemlélet:\n– A fájdalom típusa meghatározza a kezelési ritmust\n– Idegi jellegnél óvatos, indirekt technikák\n– Fasciális kötöttségnél lassú, olvasztó érintés`,
+      "tartashibak": `TARTÁSHIBÁK – B1 ÖSSZEFOGLALÓ\n\n1. Előretolt fejtartás\n2. Fokozott háti kyphosis\n3. Elülső medencebillenés\n4. Hátsó medencebillenés\n5. X‑láb / O‑láb tengelyeltérés\n\nMasszőr‑szemlélet:\n– A tartáshiba információ\n– A test ritmusát állítjuk helyre\n– A túlterhelt területet tehermentesítjük`,
+      "legzesmintak": `LÉGZÉSMINTÁK – B1 ÖSSZEFOGLALÓ\n\n1. Felszínes mellkasi légzés\n2. Kötött rekeszizom légzés\n3. Aszimmetrikus légzés\n4. Túlzott hasi légzés\n\nMasszőr‑szemlélet:\n– A légzés ritmusát figyeljük\n– Rekeszizom indirekt oldása\n– Bordakosár mobilizálása`,
+      "mozgasmintak": `
+      };
+</script>
+
+<script>
+  const select = document.getElementById("temaValaszto");
+  const output = document.getElementById("szovegBlokk");
+
+  for (const key in contents) {
+    const option = document.createElement("option");
+    option.value = key;
+    option.textContent = key;
+    select.appendChild(option);
+  }
+
+  select.addEventListener("change", () => {
+    const valasztott = select.value;
+    output.textContent = contents[valasztott] || "";
+  });
+</script>
+
+</body>
+</html>
+
+
 "fej-nyak": `FEJ–NYAK RÉGIÓ – B1 ÖSSZEFOGLALÓ
 
 Gyakori panaszok:
@@ -656,4 +726,5 @@ Masszőr‑szemlélet:
 6. A cél: harmonikus tónuseloszlás`
 
 };
+
 
