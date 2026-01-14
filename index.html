@@ -12,7 +12,6 @@
             height: 100vh;
         }
 
-        /* Oldalsó menü */
         .sidebar {
             width: 280px;
             background: #ffffff;
@@ -53,7 +52,6 @@
             color: white;
         }
 
-        /* Tartalom */
         .content {
             flex: 1;
             padding: 30px;
@@ -83,7 +81,6 @@
 
 <body>
 
-    <!-- OLDALSÓ MENÜ -->
     <div class="sidebar">
         <h2>Terápiás Radix – Menü</h2>
 
@@ -124,7 +121,6 @@
         <div class="menu-item" data-item="tengely-protokollok">Tengely protokollok</div>
     </div>
 
-    <!-- TARTALOM -->
     <div class="content">
         <h2 class="content-title" id="content-title">Üdvözöl a Terápiás Radix Modell</h2>
         <p class="content-subtitle" id="content-subtitle">Válassz egy elemet a bal oldali menüből.</p>
@@ -137,36 +133,541 @@
 
 <script>
     const contents = {
-        "fej-nyak": "FEJ–NYAK RÉGIÓ\n\nItt jelenik meg a teljes diagnózisanyag.",
-        "vallovi": "VÁLLÖV–KAR RÉGIÓ\n\nTartalom készen áll.",
-        "hat-gerinc": "HÁT–GERINC RÉGIÓ\n\nTartalom készen áll.",
-        "medence-csipo": "MEDENCE–CSÍPŐ RÉGIÓ\n\nTartalom készen áll.",
-        "lab": "LÁB RÉGIÓ\n\nTartalom készen áll.",
 
-        "felso-tonus": "FELSŐ TÓNUS\n\nTartalom készen áll.",
-        "kozepso-tonus": "KÖZÉPSŐ TÓNUS\n\nTartalom készen áll.",
-        "also-tonus": "ALSÓ TÓNUS\n\nTartalom készen áll.",
-        "mely-tonus": "MÉLY TÓNUS\n\nTartalom készen áll.",
-        "kompenzacios-tonus": "KOMPENZÁCIÓS TÓNUS\n\nTartalom készen áll.",
+        "fej-nyak": `FEJ–NYAK RÉGIÓ – DIAGNÓZISÖSSZEFOGLALÓ
 
-        "felso-szektor": "FELSŐ SZEKTOR\n\nTartalom készen áll.",
-        "kozepso-szektor": "KÖZÉPSŐ SZEKTOR\n\nTartalom készen áll.",
-        "also-szektor": "ALSÓ SZEKTOR\n\nTartalom készen áll.",
-        "lab-szektor": "LÁB SZEKTOR\n\nTartalom készen áll.",
+========================================
+Gyakori kórképek
+========================================
+– Tenziős fejfájás (Cephalgia tensionalis)  
+– Migrén aura nélkül (Migraena sine aura)  
+– Nyaki eredetű fejfájás (Cervicogen fejfájás)  
+– Temporomandibularis ízületi feszülés (TMJ diszfunkció)  
+– Nyakizom‑spazmus (Spasmus musculorum colli)  
+– Felső trapézizom túlfeszülés (Hypertonus m. trapezius pars descendens)
 
-        "fej-nyak-tengely": "FEJ–NYAK TENGELY\n\nTartalom készen áll.",
-        "vall-lapocka-tengely": "VÁLL–LAPOCKA TENGELY\n\nTartalom készen áll.",
-        "torzs-tengely": "TÖRZS TENGELY\n\nTartalom készen áll.",
-        "medence-csipo-tengely": "MEDENCE–CSÍPŐ TENGELY\n\nTartalom készen áll.",
-        "lab-tengely": "LÁB TENGELY\n\nTartalom készen áll.",
+========================================
+Tenziős fejfájás – részletes
+========================================
+Tünetek:
+– Tompa, szorító fájdalom homlok, halánték, tarkó tájon  
+– Kétoldali, nem lüktető, „pántszerű” érzés  
+– Nyak–vállöv merevsége, feszülése  
+– Fizikai aktivitás nem rontja jelentősen  
+– Gyakran stresszhez, alváshiányhoz, monitorhasználathoz társul
 
-        "felso-tonus-protokoll": "FELSŐ TÓNUS PROTOKOLL\n\nTartalom készen áll.",
-        "kozepso-tonus-protokoll": "KÖZÉPSŐ TÓNUS PROTOKOLL\n\nTartalom készen áll.",
-        "also-tonus-protokoll": "ALSÓ TÓNUS PROTOKOLL\n\nTartalom készen áll.",
-        "mely-tonus-protokoll": "MÉLY TÓNUS PROTOKOLL\n\nTartalom készen áll.",
-        "kombinalt-protokoll": "KOMBINÁLT PROTOKOLL\n\nTartalom készen áll.",
-        "szektor-protokollok": "SZEKTOR PROTOKOLLOK\n\nTartalom készen áll.",
-        "tengely-protokollok": "TENGELY PROTOKOLLOK\n\nTartalom készen áll."
+Lehetséges okok:
+– Tartós izomfeszülés a nyak–vállöv területén  
+– Hosszan fenntartott előretolt fejtartás  
+– Pszichés túlterhelés, szorongás  
+– Felső tónus túlműködése, kompenzáció a középső tónusban
+
+Belső tónus kapcsolatok:
+– Felső tónus (cranio‑cervicalis szakasz) túlfeszülése  
+– Mély tónus gyengülése a nyaki szakaszon  
+– Fej–nyak tengely instabilitása  
+– Nyaki szektor túlterhelése
+
+Ajánlott masszázs‑ és tónusprotokoll:
+– Felső tónus lazítása (nyak, tarkó, vállöv)  
+– Nyaki szektor célzott oldása, finom mobilizáció  
+– Légzés ritmusának, mélységének rendezése  
+– Fej–nyak tengely finom stabilizálása (nem manipuláció!)  
+
+Figyelmeztetések:
+– Hirtelen fellépő, „életem legerősebb” fejfájása → orvosi vizsgálat  
+– Látászavar, beszédzavar, féloldali gyengeség → sürgős orvosi ellátás  
+– Migrén gyanúja esetén: a masszázs nem helyettesíti az orvosi diagnózist
+
+========================================
+Nyaki izomfeszülés – részletes
+========================================
+Tünetek:
+– Nyak merevsége, mozgásbeszűkülés  
+– Fájdalom fejfordításra, oldalra döntésre  
+– Vállövbe, lapockába sugárzó feszülés  
+– Gyakran fejfájással társul
+
+Belső tónus szempont:
+– Felső tónus dominancia  
+– Kompenzáció a középső tónusban (lapocka, felső hát)  
+– Mély tónus gyengesége a nyaki szakaszon
+
+Masszőr‑barát megközelítés:
+– Finom, fokozatos lazítás, nem erőltetett nyújtás  
+– Légzésre hangolt fogások  
+– A fej–nyak tengely tisztelete: nincs hirtelen rántás, nincs manipuláció.`,
+
+        "vallovi": `VÁLLÖV–KAR RÉGIÓ – DIAGNÓZISÖSSZEFOGLALÓ
+
+========================================
+Gyakori kórképek
+========================================
+– Vállövi izomfeszülés (Hypertonus cinguli membri superioris)  
+– Impingement szindróma (Subacromialis ütközés)  
+– Rotátorköpeny túlterhelés (Tendinopathia rotator cuff)  
+– Biceps‑ín irritáció (Tendinitis capitis longi m. bicipitis)  
+– Lapockastabilitási zavar (Scapularis dyskinesis)  
+– Alkar‑túlerőltetés (Epicondylitis lateralis/medialis – „teniszkönyök”, „golfkönyök”)
+
+========================================
+Vállövi izomfeszülés
+========================================
+Tünetek:
+– Feszülés, merevség a trapéz, rombusz, lapockaközti izmokban  
+– Vállba, karba sugárzó tompa fájdalom  
+– Tartáshiba: előreeső vállak, előretolt fej  
+– Hosszan tartó ülőmunka, monitorhasználat
+
+Belső tónus kapcsolatok:
+– Felső tónus túlműködése (vállöv, lapocka)  
+– Középső tónus kompenzációja (háti szakasz)  
+– Törzs tengely terhelésének megváltozása
+
+Masszázs‑szempont:
+– Fokozatos lazítás a trapéz, levator scapulae, rombuszizmok területén  
+– Lapockamobilizáció, scapula‑ritmus támogatása  
+– Mellizmok (m. pectoralis major/minor) óvatos nyújtása a vállnyitás érdekében
+
+========================================
+Impingement szindróma – masszőr‑szemmel
+========================================
+Figyelmeztetés:
+– Fájdalmas ív (kb. 60–120° közötti karoldalemelés)  
+– Éjszakai vállfájdalom  
+– Aktív mozgás fájdalmas, passzív kevésbé
+
+Masszőr feladata:
+– Nem diagnosztizál, hanem tehermentesít  
+– Vállövi izomfeszülés csökkentése  
+– Lapockastabilitás támogatása  
+– Fájdalmas mozgástartomány erőltetése tilos!`,
+
+        "hat-gerinc": `HÁT–GERINC RÉGIÓ – DIAGNÓZISÖSSZEFOGLALÓ
+
+========================================
+Gyakori kórképek
+========================================
+– Thoracalis izomfeszülés (Hypertonus musculorum dorsi)  
+– Tartáshiba (Kyphosis, scoliosis funkcionális)  
+– Lumbago (Akut derékfájdalom)  
+– Lumbalis izomspazmus  
+– Facettízületi irritáció  
+– Myofasciális triggerpontok a paravertebralis izmokban
+
+========================================
+Lumbágó (Lumbago acuta) – masszőr‑barát leírás
+========================================
+Tünetek:
+– Hirtelen jelentkező, „becsípődött” derékfájdalom  
+– Mozgásra, előrehajlásra erősödő fájdalom  
+– Gyakran „elakadó” érzés, kiegyenesedési nehézség  
+– Nem feltétlenül sugárzik a lábba (az már inkább isiász)
+
+Belső tónus kapcsolatok:
+– Alsó tónus túlfeszülése (lumbalis szakasz, csípő környéke)  
+– Mély tónus (core stabilitás) gyengülése  
+– Törzs tengely terhelésének aszimmetriája  
+– Alsó szektor túlterhelése
+
+Masszázs‑ és tónuskezelési irány:
+– Akut szakban: óvatos, felszínesebb lazítás, nem mély, agresszív fogások  
+– Fokozatos oldás a paravertebralis izmokban, quadratus lumborumban  
+– Légzésre hangolt, ritmikus fogások  
+– Később: mély tónus erősítéséhez kapcsolódó edukáció (nem masszőri kompetencia, de szemlélet)
+
+Figyelmeztetések:
+– Lábba sugárzó, égő, zsibbadó fájdalom → isiász gyanú, orvosi vizsgálat  
+– Vizelet‑, székletürítési zavar, nyeregérzés kiesése → sürgős orvosi ellátás (cauda equina szindróma gyanúja)
+
+========================================
+Háti szakasz izomfeszülése
+========================================
+Tünetek:
+– Középső háti fájdalom, lapockaközti feszülés  
+– Tartáshiba: fokozott háti kyphosis  
+– Hosszan tartó ülés, előrehajlás
+
+Belső tónus:
+– Középső tónus dominancia  
+– Felső és alsó tónus kompenzációja  
+– Törzs tengely terhelésének megváltozása`,
+
+        "medence-csipo": `MEDENCE–CSÍPŐ RÉGIÓ – DIAGNÓZISÖSSZEFOGLALÓ
+
+========================================
+Gyakori kórképek
+========================================
+– Piriformis szindróma (Syndroma m. piriformis)  
+– Iliosacralis ízületi blokk (IS ízületi diszfunkció)  
+– Csípő körüli izomfeszülés (Glutealis hypertonus)  
+– Elülső medencebillenés (Anterior pelvic tilt)  
+– Derék–csípő átmeneti feszülés
+
+========================================
+Piriformis szindróma – masszőr‑szemmel
+========================================
+Tünetek:
+– Fájdalom a farpofában, gyakran egyoldali  
+– Fájdalom üléskor, lépcsőzéskor, hosszabb járáskor  
+– Néha a láb hátsó részébe sugárzó panasz (isiász‑szerű érzés)  
+– Nyomásérzékenység a piriformis vetületében
+
+Belső tónus kapcsolatok:
+– Alsó tónus túlfeszülése (glutealis, piriformis, csípőrotátorok)  
+– Mély tónus gyengesége (core, medence stabilizáció)  
+– Medence–csípő tengely aszimmetriája  
+– Alsó szektor terhelésének eltolódása
+
+Masszázs‑irány:
+– Piriformis és környező izmok óvatos, fokozatos lazítása  
+– Glutealis izmok, csípőrotátorok oldása  
+– Derék–csípő átmenet finom mobilizációja  
+– Üléshez, terheléshez kapcsolódó edukáció (nem diagnosztika, hanem szemlélet)
+
+========================================
+Iliosacralis (IS) ízületi blokk – masszőr‑szemmel
+========================================
+Figyelmeztetés:
+– Nem diagnosztizálunk, csak feszülésmintát látunk  
+– Egyoldali derék–farpofa fájdalom  
+– Bizonyos mozdulatokra „elakadó” érzés
+
+Masszőr feladata:
+– Környező izomzat (glutealis, lumbalis, piriformis) lazítása  
+– Medence körüli tónus kiegyensúlyozása  
+– Hirtelen, erőltetett manipuláció kerülése`,
+
+        "lab": `LÁB RÉGIÓ – DIAGNÓZISÖSSZEFOGLALÓ
+
+========================================
+Gyakori kórképek
+========================================
+– Térd körüli izomfeszülés (Hypertonus musculorum genus)  
+– Iliotibialis szalag feszülése (IT band syndroma)  
+– Vádli‑túlerőltetés (Triceps surae overuse)  
+– Talpi fascia gyulladás (Plantar fasciitis)  
+– Bokastabilitási zavar (Ligamentum laesio után)
+
+========================================
+Talpi fascia irritáció – masszőr‑szemmel
+========================================
+Tünetek:
+– Sarok alatti, talpi fájdalom, főleg reggeli első lépéseknél  
+– Hosszabb állás, járás fokozza  
+– Talpi ív mentén feszülés
+
+Belső tónus:
+– Láb szektor túlterhelése  
+– Alsó tónus kompenzációja  
+– Térd–csípő tengely terhelésének megváltozása
+
+Masszázs‑irány:
+– Talpi fascia óvatos lazítása  
+– Vádli, Achilles‑ín környéki izmok oldása  
+– Lábboltozat támogatása (nem ortopédiai, hanem szemléleti szinten)`,
+
+        "felso-tonus": `FELSŐ TÓNUS – TERÁPIÁS RADIX
+
+========================================
+Anatómiai–funkcionális tartomány
+========================================
+– Koponya, nyak, vállöv, felső háti szakasz  
+– Fej–nyak tengely, váll–lapocka tengely
+
+Funkció:
+– Szenzoros beérkezés, orientáció, figyelem  
+– Fej‑ és szemmozgások, nyaki stabilitás  
+– Vállöv helyzete, felső végtag indítása
+
+Tónusminták:
+– Túlterhelt felső tónus: fejfájás, nyakfájdalom, vállövi feszülés  
+– Alulműködő felső tónus: „lógó” vállak, gyenge tartás, fej előreesése
+
+Masszőr‑szemlélet:
+– Nem csak izmot lazítunk, hanem tónusmintát látunk  
+– Felső tónus lazítása mindig kapcsolódik a középső és mély tónushoz`,
+
+        "kozepso-tonus": `KÖZÉPSŐ TÓNUS – TERÁPIÁS RADIX
+
+========================================
+Anatómiai–funkcionális tartomány
+========================================
+– Mellkas, háti gerinc, lapockák, bordakosár  
+– Törzs tengely középső szakasza
+
+Funkció:
+– Légzés, törzsstabilitás, testtartás  
+– Lapockamozgás, vállöv ritmusa
+
+Tónusminták:
+– Túlterhelt középső tónus: fokozott kyphosis, lapockaközti feszülés  
+– Alulműködő középső tónus: instabil törzs, „összecsukló” tartás`,
+
+        "also-tonus": `ALSÓ TÓNUS – TERÁPIÁS RADIX
+
+========================================
+Anatómiai–funkcionális tartomány
+========================================
+– Lumbalis gerinc, medence, csípő, comb  
+– Medence–csípő tengely, alsó szektor
+
+Funkció:
+– Teherbírás, állás, járás, emelés  
+– Derék–csípő átmenet stabilitása
+
+Tónusminták:
+– Túlterhelt alsó tónus: lumbágó, derékfájdalom, csípő körüli feszülés  
+– Alulműködő alsó tónus: instabil derék, túlterhelt felső szakaszok`,
+
+        "mely-tonus": `MÉLY TÓNUS – TERÁPIÁS RADIX
+
+========================================
+Fogalom
+========================================
+– A mély stabilizáló rendszer (core) tónusa  
+– Nem egy izom, hanem funkcionális egység
+
+Funkció:
+– Gerinc stabilizálása  
+– Medence, törzs, légzés összehangolása
+
+Masszőr‑szemlélet:
+– Közvetlenül nem „masszírozzuk”, de minden fogásunk hat rá  
+– Ha a mély tónus gyenge, a felszíni tónusok kompenzálnak (fájdalom, feszülés)`,
+
+        "kompenzacios-tonus": `KOMPENZÁCIÓS TÓNUS – TERÁPIÁS RADIX
+
+========================================
+Fogalom
+========================================
+– Az a tónusminta, amely átveszi a terhelést egy gyengébb területtől  
+– Nem „rossz”, hanem túlterhelt megoldás
+
+Masszőr‑szemlélet:
+– Nem ellenség, hanem jelzés  
+– A kezelés célja: tehermentesíteni, nem „lenyomni”  
+– Mindig kérdés: mit kompenzál? Hol a gyenge láncszem?`,
+
+        "felso-szektor": `FELSŐ SZEKTOR – TERÁPIÁS RADIX
+
+========================================
+Tartomány
+========================================
+– Koponya, nyak, felső háti szakasz
+
+Kapcsolódó panaszok:
+– Fejfájás, nyakfájdalom, vállövi feszülés  
+– Tenziős fejfájás, cervicogen fejfájás
+
+Masszőr‑szemlélet:
+– Felső tónus, fej–nyak tengely, vállöv együtt értelmezendő`,
+
+        "kozepso-szektor": `KÖZÉPSŐ SZEKTOR – TERÁPIÁS RADIX
+
+========================================
+Tartomány
+========================================
+– Mellkas, háti gerinc, lapockák
+
+Kapcsolódó panaszok:
+– Lapockaközti feszülés, tartáshiba, légzéskötöttség
+
+Masszőr‑szemlélet:
+– Középső tónus, törzs tengely, lapockaritmus`,
+
+        "also-szektor": `ALSÓ SZEKTOR – TERÁPIÁS RADIX
+
+========================================
+Tartomány
+========================================
+– Lumbalis gerinc, medence, csípő
+
+Kapcsolódó panaszok:
+– Lumbágó, derékfájdalom, piriformis szindróma
+
+Masszőr‑szemlélet:
+– Alsó tónus, medence–csípő tengely, mély tónus kapcsolata`,
+
+        "lab-szektor": `LÁB SZEKTOR – TERÁPIÁS RADIX
+
+========================================
+Tartomány
+========================================
+– Térd, lábszár, boka, lábfej
+
+Kapcsolódó panaszok:
+– Térdfájdalom, vádli feszülés, talpi fascia irritáció
+
+Masszőr‑szemlélet:
+– Láb szektor terhelése visszahat az alsó és középső szektorra`,
+
+        "fej-nyak-tengely": `FEJ–NYAK TENGELY – TERÁPIÁS RADIX
+
+========================================
+Fogalom
+========================================
+– Koponya és nyaki gerinc funkcionális tengelye  
+– Fejtartás, tekintet, egyensúly
+
+Masszőr‑szemlélet:
+– Finom, tiszteletteljes érintés  
+– Nincs hirtelen rántás, nincs manipuláció  
+– Felső tónus kulcsterülete`,
+
+        "vall-lapocka-tengely": `VÁLL–LAPOCKA TENGELY – TERÁPIÁS RADIX
+
+========================================
+Fogalom
+========================================
+– Vállízület, lapocka, kulcscsont együttműködése
+
+Masszőr‑szemlélet:
+– Lapockamobilizáció, trapéz, rombusz, levator scapulae lazítása  
+– Mellizmok óvatos nyújtása`,
+
+        "torzs-tengely": `TÖRZS TENGELY – TERÁPIÁS RADIX
+
+========================================
+Fogalom
+========================================
+– Gerinc teljes hossza, medencével együtt  
+– Testtartás, stabilitás, mozgáslánc
+
+Masszőr‑szemlélet:
+– Nem „csigolyát rakunk a helyére”, hanem tónusmintát rendezünk`,
+
+        "medence-csipo-tengely": `MEDENCE–CSÍPŐ TENGELY – TERÁPIÁS RADIX
+
+========================================
+Fogalom
+========================================
+– Medence helyzete, csípőízület terhelése
+
+Kapcsolódó panaszok:
+– Lumbágó, piriformis szindróma, csípő körüli feszülés`,
+
+        "lab-tengely": `LÁB TENGELY – TERÁPIÁS RADIX
+
+========================================
+Fogalom
+========================================
+– Csípő–térd–boka–lábfej vonala
+
+Kapcsolódó panaszok:
+– Térdfájdalom, boka instabilitás, talpi panaszok`,
+
+        "felso-tonus-protokoll": `FELSŐ TÓNUS PROTOKOLL – VÁZLAT
+
+========================================
+Cél
+========================================
+– Felső tónus túlfeszülésének oldása  
+– Fej–nyak, vállöv, felső háti szakasz tehermentesítése
+
+Lépések (masszőr‑barát vázlat):
+1. Nyak–tarkó felszínes lazítása  
+2. Trapéz felső részének oldása  
+3. Lapockaközti izmok (rombusz, középső trapéz) lazítása  
+4. Mellizmok óvatos nyújtása  
+5. Fej–nyak tengely finom stabilizálása`,
+
+        "kozepso-tonus-protokoll": `KÖZÉPSŐ TÓNUS PROTOKOLL – VÁZLAT
+
+========================================
+Cél
+========================================
+– Háti szakasz, lapockaközti terület tehermentesítése  
+– Légzés támogatása
+
+Lépések:
+1. Paravertebralis izmok lazítása a háti szakaszon  
+2. Lapockamobilizáció  
+3. Bordaközti izmok finom oldása  
+4. Légzésre hangolt ritmikus fogások`,
+
+        "also-tonus-protokoll": `ALSÓ TÓNUS PROTOKOLL – VÁZLAT
+
+========================================
+Cél
+========================================
+– Lumbalis szakasz, medence, csípő körüli feszülés oldása
+
+Lépések:
+1. Paravertebralis izmok lazítása lumbalis szakaszon  
+2. Quadratus lumborum óvatos oldása  
+3. Glutealis izmok, piriformis lazítása  
+4. Csípő körüli izomzat kiegyensúlyozása`,
+
+        "mely-tonus-protokoll": `MÉLY TÓNUS PROTOKOLL – SZEMLÉLETI VÁZLAT
+
+========================================
+Cél
+========================================
+– Mély stabilizáló rendszer támogatása
+
+Masszőr‑szemlélet:
+– Légzésre hangolt, ritmikus, nem agresszív fogások  
+– Túlzott felszíni tónus csökkentése, hogy a mély tónus „előjöjjön”`,
+
+        "kombinalt-protokoll": `KOMBINÁLT PROTOKOLL – TERÁPIÁS RADIX
+
+========================================
+Fogalom
+========================================
+– Több tónus és szektor együttes kezelése  
+– Példa: fejfájás + nyakfájdalom + vállövi feszülés
+
+Masszőr‑szemlélet:
+– Nem tünetenként, hanem mintázatban gondolkodunk  
+– Felső + középső + mély tónus összehangolása`,
+
+        "szektor-protokollok": `SZEKTOR PROTOKOLLOK – VÁZLAT
+
+========================================
+Felső szektor
+========================================
+– Fej–nyak, felső háti szakasz  
+– Felső tónus protokoll elemei
+
+Középső szektor
+========================================
+– Mellkas, háti gerinc, lapockák  
+– Középső tónus protokoll elemei
+
+Alsó szektor
+========================================
+– Lumbalis gerinc, medence, csípő  
+– Alsó tónus protokoll elemei
+
+Láb szektor
+========================================
+– Térd, lábszár, boka, lábfej  
+– Láb tengely, talpi fascia, vádli oldása`,
+
+        "tengely-protokollok": `TENGELY PROTOKOLLOK – VÁZLAT
+
+========================================
+Fej–nyak tengely
+========================================
+– Finom, tiszteletteljes érintés  
+– Felső tónus lazítása
+
+Váll–lapocka tengely
+========================================
+– Lapockamobilizáció, trapéz, rombusz lazítása
+
+Törzs tengely
+========================================
+– Gerinc menti izmok kiegyensúlyozott lazítása
+
+Medence–csípő tengely
+========================================
+– Glutealis, piriformis, csípő körüli izmok oldása
+
+Láb tengely
+========================================
+– Csípő–térd–boka–lábfej vonalának figyelembevétele a kezelés során`
     };
 
     document.querySelectorAll(".menu-item").forEach(item => {
@@ -184,4 +685,3 @@
 
 </body>
 </html>
-
