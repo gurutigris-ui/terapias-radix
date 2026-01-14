@@ -20,11 +20,253 @@ button:hover { background: #666; }
 
 <script>
 const contents = {
-  "Fej–nyak": "<h2>Fej–nyak régió</h2><p>Tarkótáji feszülés, tenziós fejfájás, nyaki merevség.</p>",
-  "Vállöv–kar": "<h2>Vállöv–kar régió</h2><p>Vállövi feszülés, impingement, rotátorköpeny túlterhelés.</p>",
-  "Hát–gerinc": "<h2>Hát–gerinc régió</h2><p>Középső háti feszülés, derékfájdalom, lapockaközti húzó érzés.</p>",
-  "Medence–csípő": "<h2>Medence–csípő régió</h2><p>Csípő körüli feszülés, piriformis jellegű panaszok.</p>",
-  "Láb": "<h2>Láb régió</h2><p>Térd körüli feszülés, vádli húzó érzés, boka instabilitás.</p>"
+ "Fej–nyak": `
+  <h2>Fej–nyak régió – B1 összefoglaló</h2>
+
+  <h3>Gyakori panaszok</h3>
+  <ul>
+    <li>Tarkótáji feszülés</li>
+    <li>Tenziós fejfájás</li>
+    <li>Nyaki merevség, mozgásbeszűkülés</li>
+    <li>Vállövi feszülés, lapockába sugárzó húzó érzés</li>
+  </ul>
+
+  <h3>Jellegzetes tünetek</h3>
+  <ul>
+    <li>Előretolt fejtartás</li>
+    <li>Nyak–tarkó kötöttség</li>
+    <li>Fokozott felső tónus aktivitás</li>
+    <li>Fej–nyak tengely instabilitása</li>
+  </ul>
+
+  <h3>Tónuskapcsolatok</h3>
+  <ul>
+    <li>Felső tónus túlműködés</li>
+    <li>Mély tónus gyengesége</li>
+    <li>Középső tónus kompenzáció</li>
+    <li>Fej–nyak tengely terhelési zavara</li>
+  </ul>
+
+  <h3>Masszőr‑szemlélet</h3>
+  <ul>
+    <li>Nyak–tarkó finom, tiszteletteljes lazítása</li>
+    <li>Felső tónus tehermentesítése a középső tónus bevonásával</li>
+    <li>Fej pozíciójának indirekt rendezése</li>
+    <li>Lapocka stabilizáció támogatása</li>
+    <li>Nem agresszív, nem provokáló technikák</li>
+  </ul>
+
+  <h3>Terápiás fókusz</h3>
+  <ul>
+    <li>Felső tónus csillapítása</li>
+    <li>Mély tónus aktiválása</li>
+    <li>Fej–nyak tengely rendezése</li>
+    <li>Vállöv tehermentesítése</li>
+    <li>Légzés és tónus összehangolása</li>
+  </ul>
+`,
+
+  "Vállöv–kar": `
+  <h2>Vállöv–kar régió – B1 összefoglaló</h2>
+
+  <h3>Gyakori panaszok</h3>
+  <ul>
+    <li>Vállövi izomfeszülés</li>
+    <li>Impingement jellegű vállfájdalom</li>
+    <li>Rotátorköpeny túlterhelés</li>
+    <li>Lapockastabilitási zavar</li>
+    <li>Karba, könyökbe sugárzó tompa fájdalom</li>
+  </ul>
+
+  <h3>Jellegzetes tünetek</h3>
+  <ul>
+    <li>Fájdalmas karoldalemelés</li>
+    <li>Lapockaközti feszülés</li>
+    <li>Előreeső vállak</li>
+    <li>Váll–lapocka ritmus zavara</li>
+    <li>Gyenge lapockastabilizáció</li>
+  </ul>
+
+  <h3>Tónuskapcsolatok</h3>
+  <ul>
+    <li>Felső tónus túlműködés</li>
+    <li>Középső tónus kompenzáció</li>
+    <li>Mély tónus gyengesége</li>
+    <li>Váll–lapocka tengely instabilitása</li>
+  </ul>
+
+  <h3>Masszőr‑irányelvek</h3>
+  <ul>
+    <li>Trapéz, levator scapulae, rombusz izmok lazítása</li>
+    <li>Lapockamobilizáció finoman, nem provokálva</li>
+    <li>Mellizmok óvatos nyújtása</li>
+    <li>Rotátorköpeny tehermentesítése</li>
+    <li>Fájdalmas ív kerülése</li>
+    <li>Lapocka stabilizáció támogatása</li>
+  </ul>
+
+  <h3>Terápiás fókusz</h3>
+  <ul>
+    <li>Felső tónus csillapítása</li>
+    <li>Középső tónus aktiválása</li>
+    <li>Lapocka kontroll javítása</li>
+    <li>Váll–lapocka ritmus rendezése</li>
+    <li>Kar funkcionális mozgástartományának visszaállítása</li>
+  </ul>
+`,
+
+ "Hát–gerinc": `
+  <h2>Hát–gerinc régió – B1 összefoglaló</h2>
+
+  <h3>Gyakori panaszok</h3>
+  <ul>
+    <li>Középső háti feszülés</li>
+    <li>Lapockák közötti égő, húzó érzés</li>
+    <li>Akut derékfájdalom (lumbágó)</li>
+    <li>Tartáshibából eredő fájdalmak, főleg ülés után</li>
+    <li>Előrehajlásra, emelésre fokozódó derékfájdalom</li>
+    <li>Gerinc menti izomfeszülés</li>
+  </ul>
+
+  <h3>Jellegzetes tünetek</h3>
+  <ul>
+    <li>Fokozott középső tónus aktivitás</li>
+    <li>Derék–medence átmenet túlterhelése</li>
+    <li>Lapockák közötti kötöttség</li>
+    <li>Törzs tengelyének instabilitása</li>
+    <li>Fájdalmas előrehajlás vagy kiegyenesedés</li>
+  </ul>
+
+  <h3>Tónuskapcsolatok</h3>
+  <ul>
+    <li>Középső tónus dominancia</li>
+    <li>Alsó tónus túlterhelése deréktájon</li>
+    <li>Mély tónus gyengesége</li>
+    <li>Törzs tengely terhelési aszimmetriája</li>
+  </ul>
+
+  <h3>Masszőr‑irányelvek</h3>
+  <ul>
+    <li>Paravertebrális izmok fokozatos, nem agresszív lazítása</li>
+    <li>Lapockaközti izmok oldása</li>
+    <li>Deréktáji szakasz óvatos kezelése</li>
+    <li>Akut „becsípődött” derék esetén kíméletes technikák</li>
+    <li>Tónusok összehangolása: középső → mély → alsó</li>
+    <li>Túlterhelt szakasz tehermentesítése indirekt technikákkal</li>
+  </ul>
+
+  <h3>Terápiás fókusz</h3>
+  <ul>
+    <li>Törzs stabilizáció javítása</li>
+    <li>Mély tónus aktiválása</li>
+    <li>Derék–medence átmenet rendezése</li>
+    <li>Lapocka kontroll és mobilitás egyensúlya</li>
+    <li>Gerinc menti feszülések csökkentése</li>
+    <li>Funkcionális mozgástartomány visszaállítása</li>
+  </ul>
+`,
+
+ "Medence–csípő": `
+  <h2>Medence–csípő régió – B1 összefoglaló</h2>
+
+  <h3>Gyakori panaszok</h3>
+  <ul>
+    <li>Csípő körüli feszülés</li>
+    <li>Piriformis jellegű panaszok</li>
+    <li>Derék–medence átmenet túlterhelése</li>
+    <li>Fenékbe, combba sugárzó tompa fájdalom</li>
+    <li>Medencebillenésből eredő feszülések</li>
+    <li>Hosszabb ülés utáni merevség</li>
+  </ul>
+
+  <h3>Jellegzetes tünetek</h3>
+  <ul>
+    <li>Medence előre- vagy hátrabillenése</li>
+    <li>Csípőízület mozgásbeszűkülése</li>
+    <li>Feszes gluteális és piriformis izmok</li>
+    <li>Alsó tónus túlterhelése</li>
+    <li>Derék–medence instabilitás</li>
+  </ul>
+
+  <h3>Tónuskapcsolatok</h3>
+  <ul>
+    <li>Alsó tónus dominancia</li>
+    <li>Mély tónus gyengesége</li>
+    <li>Középső tónus kompenzáció</li>
+    <li>Derék–medence átmenet terhelési zavara</li>
+  </ul>
+
+  <h3>Masszőr‑irányelvek</h3>
+  <ul>
+    <li>Gluteális izmok óvatos lazítása</li>
+    <li>Piriformis finom oldása</li>
+    <li>Csípő körüli lágyrészek mobilizálása</li>
+    <li>Derék–medence átmenet kíméletes kezelése</li>
+    <li>Alsó tónus tehermentesítése</li>
+    <li>Mély tónus indirekt aktiválása</li>
+  </ul>
+
+  <h3>Terápiás fókusz</h3>
+  <ul>
+    <li>Medence stabilizáció</li>
+    <li>Mély tónus aktiválása</li>
+    <li>Csípő mobilitás javítása</li>
+    <li>Derék–medence átmenet rendezése</li>
+    <li>Funkcionális mozgástartomány visszaállítása</li>
+  </ul>
+`,
+
+ "Láb": `
+  <h2>Láb régió – B1 összefoglaló</h2>
+
+  <h3>Gyakori panaszok</h3>
+  <ul>
+    <li>Térd körüli feszülés</li>
+    <li>Vádli húzó érzés</li>
+    <li>Boka instabilitás</li>
+    <li>Lábboltozat süllyedésből eredő panaszok</li>
+    <li>Hosszabb állás utáni fáradtság, merevség</li>
+    <li>Achilles-ín körüli feszülés</li>
+  </ul>
+
+  <h3>Jellegzetes tünetek</h3>
+  <ul>
+    <li>Térd befelé esése (valgus)</li>
+    <li>Boka túlmozgása vagy merevsége</li>
+    <li>Vádli feszessége</li>
+    <li>Lábboltozat gyengesége</li>
+    <li>Alsó tónus túlterhelése járáskor</li>
+    <li>Instabil alsó végtagi tengely</li>
+  </ul>
+
+  <h3>Tónuskapcsolatok</h3>
+  <ul>
+    <li>Alsó tónus dominancia</li>
+    <li>Mély tónus gyengesége</li>
+    <li>Középső tónus kompenzáció járáskor</li>
+    <li>Térd–boka tengely terhelési zavara</li>
+  </ul>
+
+  <h3>Masszőr‑irányelvek</h3>
+  <ul>
+    <li>Vádli és hamstring finom lazítása</li>
+    <li>Térd körüli lágyrészek kíméletes oldása</li>
+    <li>Boka mobilizáció óvatosan</li>
+    <li>Lábboltozat támogatása indirekt technikákkal</li>
+    <li>Alsó tónus tehermentesítése</li>
+    <li>Mély tónus aktiválásának előkészítése</li>
+  </ul>
+
+  <h3>Terápiás fókusz</h3>
+  <ul>
+    <li>Boka–térd tengely stabilizáció</li>
+    <li>Lábboltozat funkcionális aktiválása</li>
+    <li>Mély tónus bevonása járásban</li>
+    <li>Alsó tónus terhelésének csökkentése</li>
+    <li>Funkcionális mozgástartomány javítása</li>
+  </ul>
+`,
+
 };
 
 const menu = document.getElementById("menu");
@@ -40,6 +282,7 @@ Object.keys(contents).forEach(key => {
 
 </body>
 </html>
+
 
 
 
