@@ -70,18 +70,39 @@ button:hover {
  <!-- IDE JÖN A LÁTHATÓ RÉSZ -->
   <h1>Diagnózis → Kezelés</h1>
 
-  <div style="float:left; width:40%; padding:10px; border-right:1px solid #ccc;" id="diagnosisList">
-    <h2>Diagnózisok</h2>
-  </div>
-
   <div style="float:right; width:55%; padding:10px;" id="treatmentDisplay">
     <h2>Kezelés</h2>
     <p>Válassz ki egy diagnózist a bal oldalon.</p>
   </div>
 
-</body>
-
 <script>
+
+  contents = { … }
+
+  diagnosisToTreatment = { … }
+
+  function getTreatment(diagnosis) { … }
+
+  function renderDiagnosisList() {
+      const list = document.getElementById("diagnosisList");
+      list.innerHTML = "<h2>Diagnózisok</h2>";
+
+      Object.keys(contents).forEach(diagnosis => {
+          const item = document.createElement("div");
+          item.className = "diagnosis-item";
+          item.textContent = diagnosis;
+          item.onclick = () => showTreatment(diagnosis);
+          list.appendChild(item);
+      });
+  }
+
+  window.onload = renderDiagnosisList;
+
+</script>
+
+</body>
+</html>
+
 
   contents = { … }
 
@@ -2570,6 +2591,7 @@ Object.keys(contents).forEach(key => {
 
 </body>
 </html>
+
 
 
 
