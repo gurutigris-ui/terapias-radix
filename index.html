@@ -89,13 +89,34 @@ button:hover {
 
   // IDE JÖN A MŰKÖDTETŐ KÓD
   function getTreatment(diagnosis) { … }
-  function renderDiagnosisList() { … }
+
+  function renderDiagnosisList() {
+      const list = document.getElementById("diagnosisList");
+
+      // töröljük az esetleges korábbi tartalmat
+      list.innerHTML = "<h2>Diagnózisok</h2>";
+
+      // végigmegyünk a contents objektum kulcsain
+      Object.keys(contents).forEach(diagnosis => {
+          const item = document.createElement("div");
+          item.className = "diagnosis-item";
+          item.textContent = diagnosis;
+
+          // kattintás esemény
+          item.onclick = () => showTreatment(diagnosis);
+
+          list.appendChild(item);
+      });
+  }
+
   function showTreatment(diagnosis) { … }
+
   window.onload = renderDiagnosisList;
 
 </script>
 
 </html>
+
 
 <h1>Terápiás Radix – Belső Tónus</h1>
 
@@ -2531,6 +2552,7 @@ Object.keys(contents).forEach(key => {
 
 </body>
 </html>
+
 
 
 
