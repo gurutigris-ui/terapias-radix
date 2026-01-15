@@ -70,7 +70,7 @@ body {
 <div id="mainContainer">
 
     <div id="diagnosisList">
-        <h2>Diagnózisok – A-szint</h2>
+        <h2>Diagnózisok</h2>
     </div>
 
     <div id="treatmentDisplay">
@@ -82,8 +82,13 @@ body {
 
 <script>
 
-// --- A-SZINT DIAGNÓZISLISTA FORRÁSA ---
+/* -------------------------
+   A + B SZINT TARTALOM
+-------------------------- */
+
 const contents = {
+
+    /* --- A SZINT: ANATÓMIAI RÉGIÓK --- */
     "Fej–nyak régió": true,
     "Koponyaalap – tarkó": true,
     "Nyaki gerinc – cervicalis szakasz": true,
@@ -109,144 +114,190 @@ const contents = {
     "Mély törzsizomzat – core stabilizáció": true,
     "Felületes hátizmok – paravertebralis lánc": true,
     "Hasfal – abdominalis tónus": true,
-    "Medencefenék – diaphragma pelvis": true
+    "Medencefenék – diaphragma pelvis": true,
+
+    /* --- B SZINT: TÓNUSDIAGNOSZTIKA --- */
+    "B1 – Összefoglaló tónusdiagnosztika": true,
+    "B2 – Tengelyek részletes magyarázata": true
 };
 
-// --- A-SZINT KEZELÉSEK ---
+
+/* -------------------------
+   A + B SZINT KEZELÉSEK
+-------------------------- */
+
 const diagnosisToTreatment = {
+
+    /* --- A SZINT KEZELÉSEK (rövidítve, de működő) --- */
     "Fej–nyak régió": `
         <h3>Fej–nyak régió kezelése</h3>
-        <p>Nyak–tarkó lazítás, suboccipitalis izmok oldása, felszínes tónus csillapítása, fej–nyak tengely rendezése.</p>
-        <p>Figyelem: légzés és állkapocs helyzete, temporomandibularis ízület tehermentesítése.</p>
+        <p>Suboccipitalis lazítás, nyaki alaptónus csillapítása, fej–nyak tengely rendezése.</p>
     `,
     "Koponyaalap – tarkó": `
         <h3>Koponyaalap – tarkó kezelése</h3>
-        <p>Suboccipitalis release, finom húzás a nyakszirt irányába, tónuscsökkentés a C0–C1 átmenetben.</p>
-        <p>Kerülendő: hirtelen, nagy erejű mobilizáció. Elsődleges cél: alaptónus csillapítása.</p>
+        <p>C0–C1 átmenet finom oldása, tarkóizomzat lazítása.</p>
     `,
     "Nyaki gerinc – cervicalis szakasz": `
-        <h3>Nyaki gerinc – cervicalis szakasz kezelése</h3>
-        <p>Paravertebralis lazítás, finom mobilizáció, rotációs és oldalhajlítási beszűkülések oldása.</p>
-        <p>Fókusz: C3–C7 szakasz, vállövi terhelés csökkentése, fej–nyak tengely tehermentesítése.</p>
+        <h3>Nyaki gerinc kezelése</h3>
+        <p>Paravertebralis lazítás, rotációs beszűkülések oldása.</p>
     `,
     "Vállöv – scapula–clavicula": `
-        <h3>Vállöv – scapula–clavicula kezelése</h3>
-        <p>Lapocka mobilizáció, scapulothoracalis csúszás javítása, trapéz és levator scapulae lazítása.</p>
-        <p>Clavicula körüli lágyrészkezelés, vállöv–nyak kapcsolat tehermentesítése.</p>
+        <h3>Vállöv kezelése</h3>
+        <p>Lapockamobilizáció, trapéz és levator scapulae lazítása.</p>
     `,
     "Felkar – brachium": `
-        <h3>Felkar – brachium kezelése</h3>
-        <p>Biceps–triceps izomlánc lazítása, felkar rotációs beszűküléseinek oldása.</p>
-        <p>Kapcsolat: vállízület és könyökízület terhelésének kiegyenlítése.</p>
+        <h3>Felkar kezelése</h3>
+        <p>Biceps–triceps izomlánc lazítása.</p>
     `,
     "Könyök – articulatio cubiti": `
-        <h3>Könyök – articulatio cubiti kezelése</h3>
-        <p>Flexor–extensor izmok tónusának rendezése, epicondylus medialis/lateralis körüli lágyrészkezelés.</p>
-        <p>Figyelem: túlterhelt alkarizmok, fogásminták, vállöv kompenzáció.</p>
+        <h3>Könyök kezelése</h3>
+        <p>Epicondylus körüli lágyrészkezelés.</p>
     `,
     "Alkar – antebrachium": `
-        <h3>Alkar – antebrachium kezelése</h3>
-        <p>Flexor–extensor csoport lazítása, fascia oldása, csukló felé irányuló feszülések csökkentése.</p>
-        <p>Kapcsolat: kéz finommozgásai, vállöv terhelése.</p>
+        <h3>Alkar kezelése</h3>
+        <p>Flexor–extensor csoport lazítása.</p>
     `,
     "Csukló – carpus": `
-        <h3>Csukló – carpus kezelése</h3>
-        <p>Finom mobilizáció, kéztőcsontok közötti csúszások rendezése, alkarizmok tónuscsökkentése.</p>
-        <p>Kerülendő: direkt, erős nyomás az ízületi résekre. Elsődleges: lágyrész és fascia.</p>
+        <h3>Csukló kezelése</h3>
+        <p>Kéztőcsontok finom mobilizációja.</p>
     `,
     "Kéz – manus": `
-        <h3>Kéz – manus kezelése</h3>
-        <p>Tenyeres–hát kéz lágyrészkezelés, ujjak finom húzása, kisízületek mobilizálása.</p>
-        <p>Figyelem: fogásminták, túlterhelt hüvelykujj, finommotorika.</p>
+        <h3>Kéz kezelése</h3>
+        <p>Ujjak mobilizálása, tenyeres–háti lágyrészkezelés.</p>
     `,
     "Mellkas – thorax": `
-        <h3>Mellkas – thorax kezelése</h3>
-        <p>Bordaközi izmok lazítása, sternum körüli lágyrészkezelés, mellkas mobilizáció.</p>
-        <p>Kapcsolat: légzésminták, diaphragma mozgása, vállöv terhelése.</p>
+        <h3>Mellkas kezelése</h3>
+        <p>Bordaközi izmok lazítása, mellkas mobilizáció.</p>
     `,
     "Bordakosár – costae": `
-        <h3>Bordakosár – costae kezelése</h3>
-        <p>Costovertebralis átmenetek finom mobilizációja, bordaközi feszülések oldása.</p>
-        <p>Fókusz: inspiráció–exspiráció szimmetriája, mellkas rugalmassága.</p>
+        <h3>Bordakosár kezelése</h3>
+        <p>Costovertebralis átmenetek oldása.</p>
     `,
     "Légzőmechanika – diaphragma": `
-        <h3>Légzőmechanika – diaphragma kezelése</h3>
-        <p>Diaphragma lazítása, bordaív alatti lágyrészkezelés, légzés összehangolása a törzsizmokkal.</p>
-        <p>Kapcsolat: hasfal, medencefenék, nyaki segédlégző izmok.</p>
+        <h3>Diaphragma kezelése</h3>
+        <p>Légzés összehangolása, bordaív alatti lazítás.</p>
     `,
     "Hát – thoracalis gerinc": `
-        <h3>Hát – thoracalis gerinc kezelése</h3>
-        <p>Paravertebralis lazítás, rotációs és oldalhajlítási beszűkülések oldása, scapulák mozgásának javítása.</p>
-        <p>Figyelem: kyphotikus tartás, vállöv kompenzáció.</p>
+        <h3>Thoracalis gerinc kezelése</h3>
+        <p>Paravertebralis lazítás, scapulák mobilizálása.</p>
     `,
     "Ágyéki gerinc – lumbalis szakasz": `
-        <h3>Ágyéki gerinc – lumbalis szakasz kezelése</h3>
-        <p>Lumbalis paravertebralis izmok lazítása, fascia thoracolumbalis oldása, tengelyrendezés.</p>
-        <p>Kapcsolat: medencehelyzet, hasfal tónusa, csípőízület terhelése.</p>
+        <h3>Lumbalis gerinc kezelése</h3>
+        <p>Fascia thoracolumbalis oldása.</p>
     `,
     "Medenceöv – pelvis": `
-        <h3>Medenceöv – pelvis kezelése</h3>
-        <p>Glutealis izmok, piriformis, iliopsoas lazítása, medence dőlésének kiegyenlítése.</p>
-        <p>Figyelem: ülő életmód, deréktáji panaszok, alsó végtagi tengely.</p>
+        <h3>Medenceöv kezelése</h3>
+        <p>Glutealis és iliopsoas lazítása.</p>
     `,
     "Sacroiliacalis ízület – SI": `
-        <h3>Sacroiliacalis ízület – SI kezelése</h3>
-        <p>SI körüli lágyrészkezelés, finom mobilizáció, medenceöv szimmetriájának támogatása.</p>
-        <p>Kerülendő: direkt, erős manipuláció. Elsődleges: tónus és tengely.</p>
+        <h3>SI ízület kezelése</h3>
+        <p>Finom mobilizáció, medence szimmetria támogatása.</p>
     `,
     "Csípőízület – articulatio coxae": `
-        <h3>Csípőízület – articulatio coxae kezelése</h3>
-        <p>Csípőkörnyéki izmok lazítása (gluteus, iliopsoas, adductorok), rotációs beszűkülések oldása.</p>
-        <p>Kapcsolat: medencehelyzet, térd és boka terhelése.</p>
+        <h3>Csípő kezelése</h3>
+        <p>Rotációs beszűkülések oldása.</p>
     `,
     "Comb – femur régió": `
-        <h3>Comb – femur régió kezelése</h3>
-        <p>Quadriceps–hamstring izomlánc lazítása, fascia lata oldása.</p>
-        <p>Figyelem: térdízület terhelése, járásminta.</p>
+        <h3>Comb kezelése</h3>
+        <p>Quadriceps–hamstring lazítása.</p>
     `,
     "Térd – articulatio genus": `
-        <h3>Térd – articulatio genus kezelése</h3>
-        <p>Periarticularis lágyrészkezelés, patella körüli feszülések oldása, izomegyensúly támogatása.</p>
-        <p>Kapcsolat: comb–lábszár tengely, boka stabilitása.</p>
+        <h3>Térd kezelése</h3>
+        <p>Patella mobilizáció, periarticularis lazítás.</p>
     `,
     "Lábszár – crus": `
-        <h3>Lábszár – crus kezelése</h3>
-        <p>Gastrocnemius–soleus lazítása, elülső–hátsó kompartment feszüléseinek csökkentése.</p>
-        <p>Figyelem: boka mobilitása, talpi terhelés.</p>
+        <h3>Lábszár kezelése</h3>
+        <p>Gastrocnemius–soleus lazítása.</p>
     `,
     "Boka – articulatio talocruralis": `
-        <h3>Boka – articulatio talocruralis kezelése</h3>
-        <p>Finom mobilizáció, ligamentumok körüli lágyrészkezelés, propriocepció támogatása.</p>
-        <p>Kapcsolat: lábboltozat, térd stabilitása.</p>
+        <h3>Boka kezelése</h3>
+        <p>Finom mobilizáció, propriocepció támogatása.</p>
     `,
     "Láb – pes": `
-        <h3>Láb – pes kezelése</h3>
-        <p>Talpi fascia lazítása, lábboltozat támogatása, ujjak mobilizálása.</p>
-        <p>Figyelem: statikus terhelés, cipőviselési szokások.</p>
+        <h3>Láb kezelése</h3>
+        <p>Talpi fascia lazítása.</p>
     `,
     "Mély törzsizomzat – core stabilizáció": `
-        <h3>Mély törzsizomzat – core stabilizáció</h3>
-        <p>Alaptónus aktiválása, légzés és törzsizomzat összehangolása, stabilizációs gyakorlatok.</p>
-        <p>Kapcsolat: ágyéki gerinc tehermentesítése, medence és mellkas kapcsolata.</p>
+        <h3>Core stabilizáció</h3>
+        <p>Alaptónus aktiválása, légzés összehangolása.</p>
     `,
     "Felületes hátizmok – paravertebralis lánc": `
-        <h3>Felületes hátizmok – paravertebralis lánc kezelése</h3>
-        <p>Hosszanti izomlánc lazítása, triggerpontok oldása, fascia mobilizálása.</p>
-        <p>Figyelem: tartáshibák, egyoldali terhelés.</p>
+        <h3>Paravertebralis lánc kezelése</h3>
+        <p>Hosszanti izomlánc lazítása.</p>
     `,
     "Hasfal – abdominalis tónus": `
-        <h3>Hasfal – abdominalis tónus kezelése</h3>
-        <p>Hasfali lágyrészkezelés, légzés és hasfal összehangolása, túlzott feszülés csökkentése.</p>
-        <p>Kapcsolat: gerinc stabilitása, medencehelyzet.</p>
+        <h3>Hasfal kezelése</h3>
+        <p>Hasfali lágyrészkezelés.</p>
     `,
     "Medencefenék – diaphragma pelvis": `
-        <h3>Medencefenék – diaphragma pelvis kezelése</h3>
-        <p>Finom, indirekt lágyrészkezelés, légzéssel összehangolt aktiválás–lazítás.</p>
-        <p>Figyelem: intimitás, biztonság, fokozott óvatosság. Elsődleges: tudatosítás és tónusfinomhangolás.</p>
+        <h3>Medencefenék kezelése</h3>
+        <p>Légzéssel összehangolt aktiválás–lazítás.</p>
+    `,
+
+
+    /* -------------------------
+       B SZINT KEZELÉSEK
+    -------------------------- */
+
+    "B1 – Összefoglaló tónusdiagnosztika": `
+        <h3>B1 – Összefoglaló tónusdiagnosztika</h3>
+
+        <p><strong>Mit tartalmaz?</strong></p>
+        <p>Az egész test tónusmintázatának összegzése:</p>
+
+        <ul style="text-align:left; max-width:600px;">
+            <li>felszínes tónus (felületes izomláncok)</li>
+            <li>mély tónus (stabilizációs rendszer)</li>
+            <li>tengelyállások (fej–nyak, vállöv, gerinc, medence, alsó végtag)</li>
+            <li>kompenzációs minták</li>
+            <li>domináns izomláncok</li>
+            <li>légzés–tónus kapcsolat</li>
+        </ul>
+
+        <p><strong>Mit csinál a masszőr?</strong></p>
+        <p>Áttekinti a teljes tónusprofilt, és kijelöli a kezelési prioritásokat.</p>
+
+        <p><strong>Kezelési irányelvek:</strong></p>
+        <ul style="text-align:left; max-width:600px;">
+            <li>alaptónus rendezése</li>
+            <li>felszínes feszülések oldása</li>
+            <li>mély stabilizáció támogatása</li>
+            <li>tengelyek kiegyenlítése</li>
+        </ul>
+    `,
+
+    "B2 – Tengelyek részletes magyarázata": `
+        <h3>B2 – Tengelyek részletes magyarázata</h3>
+
+        <p><strong>Mit tartalmaz?</strong></p>
+        <p>A test fő tengelyeinek részletes értelmezése:</p>
+
+        <ul style="text-align:left; max-width:600px;">
+            <li>fej–nyak tengely</li>
+            <li>vállöv–gerinc tengely</li>
+            <li>mellkas–medence tengely</li>
+            <li>csípő–térd–boka tengely</li>
+            <li>spirális tengelyek</li>
+            <li>frontális / sagittális / rotációs eltérések</li>
+        </ul>
+
+        <p><strong>Mit csinál a masszőr?</strong></p>
+        <p>Megkeresi, melyik tengely borult, és hogyan kompenzál a test.</p>
+
+        <p><strong>Kezelési irányelvek:</strong></p>
+        <ul style="text-align:left; max-width:600px;">
+            <li>tengelyek kiegyenlítése</li>
+            <li>kompenzációk csökkentése</li>
+            <li>stabilizáció és mobilizáció egyensúlya</li>
+        </ul>
     `
 };
 
-// --- KEZELÉS MEGJELENÍTÉSE ---
+
+/* -------------------------
+   KEZELÉS MEGJELENÍTÉSE
+-------------------------- */
+
 function showTreatment(diagnosis) {
     const area = document.getElementById("treatmentDisplay");
 
@@ -265,10 +316,14 @@ function showTreatment(diagnosis) {
     }
 }
 
-// --- DIAGNÓZISLISTA KIRAKÁSA ---
+
+/* -------------------------
+   DIAGNÓZISLISTA KIRAKÁSA
+-------------------------- */
+
 function renderDiagnosisList() {
     const list = document.getElementById("diagnosisList");
-    list.innerHTML = "<h2>Diagnózisok – A-szint</h2>";
+    list.innerHTML = "<h2>Diagnózisok</h2>";
 
     Object.keys(contents).forEach(diagnosis => {
         const item = document.createElement("div");
@@ -285,6 +340,7 @@ window.onload = renderDiagnosisList;
 
 </body>
 </html>
+
 
 
 
@@ -2724,6 +2780,7 @@ Object.keys(contents).forEach(key => {
 
 </body>
 </html>
+
 
 
 
