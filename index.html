@@ -109,7 +109,25 @@ button:hover {
       });
   }
 
-  function showTreatment(diagnosis) { … }
+function showTreatment(diagnosis) {
+    const treatmentArea = document.getElementById("treatmentDisplay");
+
+    // ha van hozzá tartozó kezelés, megjelenítjük
+    if (diagnosisToTreatment[diagnosis]) {
+        treatmentArea.innerHTML = `
+            <h2>Kezelés</h2>
+            <h3>${diagnosis}</h3>
+            <p>${diagnosisToTreatment[diagnosis]}</p>
+        `;
+    } else {
+        // ha nincs kezelés, üzenetet írunk ki
+        treatmentArea.innerHTML = `
+            <h2>Kezelés</h2>
+            <h3>${diagnosis}</h3>
+            <p>Nincs hozzá tartozó kezelési protokoll.</p>
+        `;
+    }
+}
 
   window.onload = renderDiagnosisList;
 
@@ -2552,6 +2570,7 @@ Object.keys(contents).forEach(key => {
 
 </body>
 </html>
+
 
 
 
