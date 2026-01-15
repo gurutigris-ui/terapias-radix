@@ -12,40 +12,21 @@ body {
     background: #f5f5f5;
 }
 
-#menu {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
-
-button {
-    padding: 10px 15px;
-    border: none;
-    background: #444;
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-button:hover {
-    background: #666;
-}
-
-#content {
-    background: white;
-    padding: 20px;
-    border-radius: 6px;
-}
-
-/* --- DIAGNÓZISLISTA STÍLUSA --- */
-
 #diagnosisList {
     background: #ffffff;
     border-radius: 6px;
     padding: 10px;
     max-height: 80vh;
     overflow-y: auto;
+    float: left;
+    width: 40%;
+    border-right: 1px solid #ccc;
+}
+
+#treatmentDisplay {
+    float: right;
+    width: 55%;
+    padding: 10px;
 }
 
 .diagnosis-item {
@@ -65,90 +46,99 @@ button:hover {
 </style>
 </head>
 
+<body>
 
+<h1>Diagnózis → Kezelés</h1>
 
- <!-- IDE JÖN A LÁTHATÓ RÉSZ -->
-  <h1>Diagnózis → Kezelés</h1>
+<div id="diagnosisList">
+    <h2>Diagnózisok</h2>
+</div>
 
-  <div style="float:right; width:55%; padding:10px;" id="treatmentDisplay">
+<div id="treatmentDisplay">
     <h2>Kezelés</h2>
     <p>Válassz ki egy diagnózist a bal oldalon.</p>
-  </div>
+</div>
 
 <script>
 
-  contents = { … }
+// --- DIAGNÓZISLISTA FORRÁSA ---
+const contents = {
+    "Fej–nyak": true,
+    "Vállöv–kar": true,
+    "Hát–gerinc": true,
+    "Mély tónus": true,
+    "B1 összefoglaló": true,
+    "B2 – Tengelyek részletes magyarázata": true
+};
 
-  diagnosisToTreatment = { … }
+// --- KEZELÉSEK ---
+const diagnosisToTreatment = {
+    "Fej–nyak": `
+        <h3>Fej–nyak kezelés</h3>
+        <p>Nyak–tarkó lazítás, felső tónus csillapítása, lapocka stabilizáció.</p>
+    `,
+    "Vállöv–kar": `
+        <h3>Vállöv–kar kezelés</h3>
+        <p>Lapocka mobilizáció, vállövi tónuscsökkentés, rotátorköpeny tehermentesítés.</p>
+    `,
+    "Hát–gerinc": `
+        <h3>Hát–gerinc kezelés</h3>
+        <p>Paravertebrális lazítás, tengelyrendezés, mély tónus aktiválás.</p>
+    `,
+    "Mély tónus": `
+        <h3>Mély tónus kezelés</h3>
+        <p>Stabilizáció, légzés összehangolása, alaptónus rendezése.</p>
+    `,
+    "B1 összefoglaló": `
+        <h3>B1 összefoglaló kezelés</h3>
+        <p>Komplex tónusdiagnosztika alapján összeállított protokoll.</p>
+    `,
+    "B2 – Tengelyek részletes magyarázata": `
+        <h3>B2 tengelykezelés</h3>
+        <p>Fej–nyak, vállöv, medence és láb tengelykapcsolatok rendezése.</p>
+    `
+};
 
-  function getTreatment(diagnosis) { … }
-
-  function renderDiagnosisList() {
-      const list = document.getElementById("diagnosisList");
-      list.innerHTML = "<h2>Diagnózisok</h2>";
-
-      Object.keys(contents).forEach(diagnosis => {
-          const item = document.createElement("div");
-          item.className = "diagnosis-item";
-          item.textContent = diagnosis;
-          item.onclick = () => showTreatment(diagnosis);
-          list.appendChild(item);
-      });
-  }
-
-  window.onload = renderDiagnosisList;
-
-</script>
-
-</body>
-</html>
-
-
-  contents = { … }
-
-  diagnosisToTreatment = { … }
-
-  // IDE JÖN A MŰKÖDTETŐ KÓD
-  function getTreatment(diagnosis) { … }
-
-  function renderDiagnosisList() {
-      const list = document.getElementById("diagnosisList");
-
-      // töröljük az esetleges korábbi tartalmat
-      list.innerHTML = "<h2>Diagnózisok</h2>";
-
-      // végigmegyünk a contents objektum kulcsain
-      Object.keys(contents).forEach(diagnosis => {
-          const item = document.createElement("div");
-          item.className = "diagnosis-item";
-          item.textContent = diagnosis;
-
-          // kattintás esemény
-          item.onclick = () => showTreatment(diagnosis);
-
-          list.appendChild(item);
-      });
-  }
-
+// --- KEZELÉS MEGJELENÍTÉSE ---
 function showTreatment(diagnosis) {
-    const treatmentArea = document.getElementById("treatmentDisplay");
+    const area = document.getElementById("treatmentDisplay");
 
-    // ha van hozzá tartozó kezelés, megjelenítjük
     if (diagnosisToTreatment[diagnosis]) {
-        treatmentArea.innerHTML = `
+        area.innerHTML = `
             <h2>Kezelés</h2>
             <h3>${diagnosis}</h3>
-            <p>${diagnosisToTreatment[diagnosis]}</p>
+            ${diagnosisToTreatment[diagnosis]}
         `;
     } else {
-        // ha nincs kezelés, üzenetet írunk ki
-        treatmentArea.innerHTML = `
+        area.innerHTML = `
             <h2>Kezelés</h2>
             <h3>${diagnosis}</h3>
             <p>Nincs hozzá tartozó kezelési protokoll.</p>
         `;
     }
 }
+
+// --- DIAGNÓZISLISTA KIRAKÁSA ---
+function renderDiagnosisList() {
+    const list = document.getElementById("diagnosisList");
+    list.innerHTML = "<h2>Diagnózisok</h2>";
+
+    Object.keys(contents).forEach(diagnosis => {
+        const item = document.createElement("div");
+        item.className = "diagnosis-item";
+        item.textContent = diagnosis;
+        item.onclick = () => showTreatment(diagnosis);
+        list.appendChild(item);
+    });
+}
+
+window.onload = renderDiagnosisList;
+
+</script>
+
+</body>
+</html>
+
 
   window.onload = renderDiagnosisList;
 
@@ -2591,6 +2581,7 @@ Object.keys(contents).forEach(key => {
 
 </body>
 </html>
+
 
 
 
