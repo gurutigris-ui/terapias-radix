@@ -12,6 +12,42 @@ button:hover { background: #666; }
 </style>
 </head>
 <body>
+<html>
+<head>
+  … (marad minden)
+</head>
+
+<body>
+
+  <!-- IDE JÖN A LÁTHATÓ RÉSZ -->
+  <h1>Diagnózis → Kezelés</h1>
+
+  <div style="float:left; width:40%; padding:10px; border-right:1px solid #ccc;" id="diagnosisList">
+    <h2>Diagnózisok</h2>
+  </div>
+
+  <div style="float:right; width:55%; padding:10px;" id="treatmentDisplay">
+    <h2>Kezelés</h2>
+    <p>Válassz ki egy diagnózist a bal oldalon.</p>
+  </div>
+
+</body>
+
+<script>
+
+  contents = { … }
+
+  diagnosisToTreatment = { … }
+
+  // IDE JÖN A MŰKÖDTETŐ KÓD
+  function getTreatment(diagnosis) { … }
+  function renderDiagnosisList() { … }
+  function showTreatment(diagnosis) { … }
+  window.onload = renderDiagnosisList;
+
+</script>
+
+</html>
 
 <h1>Terápiás Radix – Belső Tónus</h1>
 
@@ -2447,6 +2483,7 @@ Object.keys(contents).forEach(key => {
 
 </body>
 </html>
+
 
 
 
