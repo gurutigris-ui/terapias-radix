@@ -81,13 +81,1046 @@ body {
     <div id="treatmentDisplay">
         <h2>Kezelés</h2>
         <p>Válassz ki egy diagnózist a bal oldalon.</p>
-    </div>
-
+</div>
 </div>
 
 <script>
-// KEZELÉSI PROTOKOLLOK – E‑SZINT
 const treatments = {
+
+   
+        "cephalgia": `
+    <h2>Cephalgia tensionalis – Izomeredetű fejfájás</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    m. trapezius pars descendens, m. levator scapulae, suboccipitalis izmok, 
+    fascia cervicalis profunda, ligamentum nuchae.
+
+    <strong>Klinikai háttér:</strong><br>
+    A fejfájás hátterében leggyakrabban a felső trapéz és a suboccipitalis izmok 
+    tartós tónusfokozódása áll. A kötőszöveti rétegek letapadása, a nyaki 
+    paravertebrális izmok feszülése és az occipitalis idegek mechanikai irritációja 
+    fenntartja a fájdalomkört. Gyakran társul tartáshibával és stressz okozta 
+    izomtónus‑emelkedéssel.
+
+    <strong>Tiltások:</strong><br>
+    – erős nyomás a suboccipitalis régióban<br>
+    – hirtelen fejrotáció<br>
+    – mély triggerpont‑nyomás akut szakban<br>
+    – erős mobilizáció kerülendő
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Paravertebrális lazítás (C1–Th3 szakasz)<br>
+    2. Fascia cervicalis oldása (felszínes → mély réteg)<br>
+    3. Suboccipitalis decompressio (statikus, finom technika)<br>
+    4. Idegcsúsztatás: n. occipitalis major – n. accessorius<br>
+    5. Trapéz felső rostjainak tónuscsökkentése<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, suboccipitalis release, 
+    idegmobilizáció, nyújtás, lassú olvadó húzás
+
+    <strong>Terápiás cél:</strong><br>
+    A tónuscsökkentés, a kötőszöveti rétegek felszabadítása, 
+    az idegi feszülés csökkentése és a fejfájás intenzitásának mérséklése.
+`,
+
+   
+     "cervicalgia": `
+    <h2>Cervicalgia – Nyaki fájdalom</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    m. trapezius (pars descendens), m. levator scapulae, 
+    m. splenius capitis/cervicis, m. semispinalis, 
+    fascia cervicalis superficialis és profunda, 
+    uncovertebralis ízületek körüli lágyrészek.
+
+    <strong>Klinikai háttér:</strong><br>
+    A cervicalgia leggyakrabban tartáshibából, stresszből, 
+    hosszan tartó statikus terhelésből vagy akut izomvédekezésből ered. 
+    A nyaki paravertebrális izmok tónusfokozódása, a fascia rétegek 
+    letapadása és a kisízületek körüli lágyrészfeszülés 
+    beszűkíti a mozgástartományt és fenntartja a fájdalmat.
+
+    <strong>Tiltások:</strong><br>
+    – hirtelen fejrotáció<br>
+    – erős nyomás a processus spinosusokon<br>
+    – agresszív mobilizáció akut szakban<br>
+    – erős laterálflexiós húzás kerülendő
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Paravertebrális lazítás (C1–Th3 szakasz)<br>
+    2. Fascia cervicalis oldása (felszínes → mély réteg)<br>
+    3. Levator scapulae és trapezius felső rostjainak tónuscsökkentése<br>
+    4. Nyaki kisízületek körüli lágyrészek mobilizálása (kíméletes)<br>
+    5. Idegcsúsztatás: n. accessorius – plexus cervicalis<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    paravertebrális lazítás, idegmobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    A nyaki izomtónus csökkentése, a fascia rétegek felszabadítása, 
+    a mozgástartomány növelése és a fájdalom mérséklése.
+`,
+   
+    
+        "lumbago": `
+    <h2>Lumbago – Deréktáji izomeredetű fájdalom</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    m. erector spinae (lumbalis szakasz), m. quadratus lumborum, 
+    thoracolumbalis fascia, lumbalis paravertebrális izmok, 
+    fascia thoracolumbalis mély rétegei.
+
+    <strong>Klinikai háttér:</strong><br>
+    A lumbago leggyakrabban akut izomvédekezés, hirtelen mozdulat, 
+    túlterhelés vagy tartós statikus terhelés következménye. 
+    A thoracolumbalis fascia letapadása és a paravertebrális izmok 
+    tónusfokozódása beszűkíti a mozgástartományt, és éles, 
+    mozgásra fokozódó fájdalmat okoz. Gyakran társul medenceövi 
+    aszimmetriával és csökkent lumbalis stabilitással.
+
+    <strong>Tiltások:</strong><br>
+    – erős rotáció<br>
+    – mély, agresszív nyomás akut szakban<br>
+    – hirtelen előrehajlítás<br>
+    – erős lumbalis mobilizáció kerülendő
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Paravertebrális lazítás (L1–S1 szakasz)<br>
+    2. Thoracolumbalis fascia oldása (felszínes → mély réteg)<br>
+    3. Quadratus lumborum tónuscsökkentése (kíméletes technikákkal)<br>
+    4. Lumbalis idegcsúsztatás (n. iliohypogastricus, n. ilioinguinalis)<br>
+    5. Medenceövi lágyrészek harmonizálása<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    paravertebrális lazítás, idegmobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    A deréktáji izomtónus csökkentése, a fascia felszabadítása, 
+    a mozgástartomány növelése és az akut fájdalom mérséklése.
+`,
+
+        "discus-hernia": `
+    <h2>Discus hernia lumbalis – Porckorongsérv</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    lumbalis paravertebrális izmok, m. erector spinae, 
+    m. quadratus lumborum, thoracolumbalis fascia, 
+    discus intervertebralis (L4–L5, L5–S1 gyakori), 
+    n. ischiadicus lefutása.
+
+    <strong>Klinikai háttér:</strong><br>
+    A discus hernia során a porckorong kitüremkedése vagy sérve 
+    mechanikai nyomást gyakorolhat az ideggyökökre. 
+    A környező izmok reflexes védekező tónusfokozódása, 
+    a fascia rétegek letapadása és az idegi feszülés 
+    jelentős fájdalmat és mozgásbeszűkülést okoz. 
+    A kezelés célja a lágyrészek tehermentesítése és az idegi feszülés csökkentése.
+
+    <strong>Tiltások:</strong><br>
+    – erős rotáció<br>
+    – erős nyomás a lumbalis szakaszon<br>
+    – hirtelen előrehajlítás<br>
+    – agresszív mobilizáció kerülendő<br>
+    – akut szakban mély nyomás tilos
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Paravertebrális lazítás (L1–S1 szakasz, kíméletes)<br>
+    2. Thoracolumbalis fascia oldása (felszínes → mély réteg)<br>
+    3. Quadratus lumborum tónuscsökkentése<br>
+    4. Idegcsúsztatás: n. ischiadicus – gyök szintű tehermentesítés<br>
+    5. Medenceövi lágyrészek harmonizálása<br>
+    6. Levezető nyújtás (fájdalomhatáron belül)
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    paravertebrális lazítás, idegmobilizáció, kíméletes nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    A lumbalis izomtónus csökkentése, a fascia felszabadítása, 
+    az idegi kompresszió mérséklése és a fájdalom csökkentése.
+`,
+
+        "ischialgia": `
+    <h2>Ischialgia – Ülőideg eredetű fájdalom</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    m. piriformis, m. gluteus medius/minimus, 
+    fascia glutealis, fascia lata proximális része, 
+    n. ischiadicus lefutása (gluteális régiótól distalisan).
+
+    <strong>Klinikai háttér:</strong><br>
+    Az ischialgia hátterében gyakran piriformis‑szindróma, 
+    gluteális izomdiszbalansz vagy lumbalis eredetű ideggyöki irritáció áll. 
+    A piriformis tónusfokozódása vagy rövidülése kompressziót gyakorolhat 
+    a n. ischiadicusra, amely kisugárzó fájdalmat, zsibbadást, gyengeséget okozhat 
+    az alsó végtagban. A gluteális fascia letapadása tovább fokozza a tüneteket.
+
+    <strong>Tiltások:</strong><br>
+    – erős nyomás a piriformison<br>
+    – hirtelen csípőrotáció<br>
+    – mély triggerpont‑nyomás akut szakban<br>
+    – agresszív nyújtás fájdalomprovokáció esetén
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Gluteális régió felszínes lazítása (kíméletes simítás)<br>
+    2. Piriformis lazítása (lassú, finom technikákkal)<br>
+    3. Gluteus medius/minimus fascia oldása<br>
+    4. Idegcsúsztatás a n. ischiadicus lefutása mentén<br>
+    5. Csípő körüli lágyrészek harmonizálása<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    fascia‑mobilizáció, lassú olvadó húzás, 
+    kíméletes mélyebb lazító fogások, idegmobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    A piriformis‑eredetű kompresszió csökkentése, 
+    a gluteális régió felszabadítása, az idegi feszülés mérséklése 
+    és a kisugárzó fájdalom csökkentése.
+`,
+
+        "coxarthrosis": `
+    <h2>Coxarthrosis – Csípőízületi kopás</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    csípő körüli lágyrészek, m. iliopsoas, m. gluteus medius/minimus, 
+    m. tensor fasciae latae, fascia lata, tractus iliotibialis, 
+    csípőízületi tok körüli kötőszöveti rétegek.
+
+    <strong>Klinikai háttér:</strong><br>
+    A csípőízületi kopás során az ízületi felszínek degenerációja miatt 
+    a környező izmok és fasciák kompenzatorikusan feszessé válnak. 
+    A mozgástartomány beszűkül, különösen a berotáció és abdukció irányában. 
+    A csípő körüli lágyrészek letapadása és a medenceövi izomegyensúly 
+    felborulása fokozza a fájdalmat és a járáskép romlását.
+
+    <strong>Tiltások:</strong><br>
+    – erős rotáció<br>
+    – hirtelen mobilizáció<br>
+    – mély nyomás az elülső csípőízületi részen<br>
+    – agresszív nyújtás fájdalomprovokáció esetén
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Csípő körüli izmok felszínes lazítása<br>
+    2. Fascia lata és tractus iliotibialis oldása<br>
+    3. Iliopsoas finom mobilizációja (kíméletes technikákkal)<br>
+    4. Csípőízületi mobilizáció (kis amplitúdójú, fájdalommentes)<br>
+    5. Gluteus medius/minimus tónuscsökkentése<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    simítás, fascia‑technika, lassú olvadó húzás, 
+    kíméletes mobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    A csípő körüli lágyrészek felszabadítása, 
+    a mozgástartomány növelése, a fájdalom csökkentése 
+    és a járáskép javítása.
+`,
+            
+"sclerosis-multiplex": `
+    <h2>Sclerosis Multiplex – Neuromuscularis állapot</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    teljes test izomzata (főként alsó végtag), 
+    fascia superficialis és profunda, 
+    paravertebrális izmok, 
+    csípő‑ és térd körüli stabilizátorok.
+
+    <strong>Klinikai háttér:</strong><br>
+    A sclerosis multiplex demyelinisatiós folyamat, amely 
+    izomgyengeséget, tónusváltozást, koordinációs zavart és 
+    fáradékonyságot okozhat. A lágyrészek gyakran feszessé válnak, 
+    a fascia rétegek letapadnak, ami tovább rontja a mozgásminőséget.  
+    A masszázs célja a tónus harmonizálása és a mozgáskomfort javítása.
+
+    <strong>Tiltások:</strong><br>
+    – erős nyomás kerülendő<br>
+    – hirtelen mobilizáció<br>
+    – túlzott fárasztás<br>
+    – akut fellángolás alatt kezelés nem javasolt
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Felszínes teljes test lazítás<br>
+    2. Fascia oldása (kíméletes, lassú technikákkal)<br>
+    3. Alsó végtagi tónus harmonizálása<br>
+    4. Paravertebrális lazítás (kíméletes)<br>
+    5. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    kíméletes mobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a tónus harmonizálása, a fascia felszabadítása, 
+    a mozgáskomfort és a testérzet javítása.
+`,
+            
+"parkinson": `
+    <h2>Parkinson‑kór – Neuromotoros állapot</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    teljes test izomzata, különösen: 
+    m. trapezius, m. levator scapulae, 
+    paravertebrális izmok, 
+    alsó végtagi flexorok és extensorok, 
+    fascia superficialis és profunda.
+
+    <strong>Klinikai háttér:</strong><br>
+    A Parkinson‑kór izommerevséggel (rigiditás), 
+    lassult mozgással és tartáshibával jár.  
+    A kötőszöveti rétegek feszessé válnak, 
+    a mozgástartomány beszűkül.  
+    A masszázs célja a tónus csökkentése és a mozgás könnyítése.
+
+    <strong>Tiltások:</strong><br>
+    – erős nyomás kerülendő<br>
+    – hirtelen mobilizáció<br>
+    – túlzott fárasztás<br>
+    – remegés alatt erős fogások kerülendők
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Felszínes lazítás (teljes test)<br>
+    2. Fascia oldása (lassú, olvadó technikákkal)<br>
+    3. Paravertebrális lazítás<br>
+    4. Vállövi és csípőövi tónuscsökkentés<br>
+    5. Levezető nyújtás
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    kíméletes mobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a rigiditás csökkentése, a mozgás könnyítése, 
+    a testérzet javítása és a komfort növelése.
+`,
+            
+"stroke": `
+    <h2>Stroke utáni állapot – Hemiparesis / tónuszavar</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    érintett oldali végtagok izomzata, 
+    vállövi stabilizátorok, 
+    paravertebrális izmok, 
+    fascia superficialis és profunda.
+
+    <strong>Klinikai háttér:</strong><br>
+    Stroke után gyakori a spaszticitás, tónuszavar, 
+    mozgásbeszűkülés és koordinációs nehézség.  
+    A lágyrészek feszessé válnak, a fascia rétegek letapadnak, 
+    ami tovább rontja a mozgásminőséget.  
+    A masszázs célja a tónus harmonizálása és a mozgáskomfort javítása.
+
+    <strong>Tiltások:</strong><br>
+    – erős nyomás kerülendő<br>
+    – agresszív mobilizáció<br>
+    – spasztikus tónus alatt erős fogások kerülendők<br>
+    – vérnyomás‑ingadozás esetén óvatosság
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Felszínes lazítás az érintett oldalon<br>
+    2. Fascia oldása (kíméletes, lassú technikákkal)<br>
+    3. Spasztikus területek tónuscsökkentése<br>
+    4. Paravertebrális lazítás<br>
+    5. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    kíméletes mobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a tónus harmonizálása, a fascia felszabadítása, 
+    a mozgáskomfort javítása és a spaszticitás mérséklése.
+`,
+
+            "lyme-kor": `
+    <h2>Lyme‑kór – Postinfectiós izom‑ és kötőszöveti állapot</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    diffúz izomzat (főként alsó végtag és törzs), 
+    fascia superficialis és profunda, 
+    paravertebrális izmok, 
+    ízületek körüli lágyrészek (térd, csípő gyakori).
+
+    <strong>Klinikai háttér:</strong><br>
+    A Lyme‑kór fertőzés utáni szakaszában gyakori a diffúz izomfájdalom, 
+    ízületi merevség, fáradékonyság és kötőszöveti letapadás.  
+    A fascia rétegek feszessé válnak, a mozgástartomány csökken.  
+    A masszázs célja a tónus harmonizálása és a mozgáskomfort javítása.
+
+    <strong>Tiltások:</strong><br>
+    – akut gyulladás esetén kezelés nem javasolt<br>
+    – erős nyomás kerülendő<br>
+    – agresszív mobilizáció<br>
+    – túlzott fárasztás
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Felszínes teljes test lazítás<br>
+    2. Fascia oldása (lassú, olvadó technikákkal)<br>
+    3. Alsó végtagi tónus harmonizálása<br>
+    4. Paravertebrális lazítás<br>
+    5. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    kíméletes mobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a kötőszöveti feszesség csökkentése, 
+    a mozgástartomány javítása, 
+    a testérzet és komfort növelése.
+`,
+
+      "bechterew": `
+    <h2>Bechterew‑kór (Spondylitis ankylopoetica) – Gerinc eredetű gyulladásos állapot</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    paravertebrális izmok (thoracalis és lumbalis szakasz), 
+    fascia thoracolumbalis, 
+    mellkasfal lágyrészei, 
+    csípőövi stabilizátorok.
+
+    <strong>Klinikai háttér:</strong><br>
+    A Bechterew‑kór krónikus gyulladásos folyamat, 
+    amely a gerinc merevségéhez, kötőszöveti letapadásokhoz 
+    és csökkent mellkasi mobilitáshoz vezet.  
+    A masszázs célja a lágyrészek felszabadítása és a mozgáskomfort javítása.
+
+    <strong>Tiltások:</strong><br>
+    – erős nyomás a gerincen<br>
+    – agresszív mobilizáció<br>
+    – akut gyulladásos fellángolás alatt kezelés nem javasolt<br>
+    – hirtelen rotáció
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Paravertebrális lazítás (kíméletes, hosszú fogásokkal)<br>
+    2. Thoracolumbalis fascia oldása<br>
+    3. Mellkasfal lágyrészeinek mobilizálása (kíméletes)<br>
+    4. Csípőövi tónus harmonizálása<br>
+    5. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    kíméletes mobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a gerinc körüli lágyrészek felszabadítása, 
+    a mellkasi mobilitás javítása, 
+    a fájdalom és merevség csökkentése.
+`,
+
+            "bechterew": `
+    <h2>Bechterew‑kór (Spondylitis ankylopoetica) – Gerinc eredetű gyulladásos állapot</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    paravertebrális izmok (thoracalis és lumbalis szakasz), 
+    fascia thoracolumbalis, 
+    mellkasfal lágyrészei, 
+    csípőövi stabilizátorok.
+
+    <strong>Klinikai háttér:</strong><br>
+    A Bechterew‑kór krónikus gyulladásos folyamat, 
+    amely a gerinc merevségéhez, kötőszöveti letapadásokhoz 
+    és csökkent mellkasi mobilitáshoz vezet.  
+    A masszázs célja a lágyrészek felszabadítása és a mozgáskomfort javítása.
+
+    <strong>Tiltások:</strong><br>
+    – erős nyomás a gerincen<br>
+    – agresszív mobilizáció<br>
+    – akut gyulladásos fellángolás alatt kezelés nem javasolt<br>
+    – hirtelen rotáció
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Paravertebrális lazítás (kíméletes, hosszú fogásokkal)<br>
+    2. Thoracolumbalis fascia oldása<br>
+    3. Mellkasfal lágyrészeinek mobilizálása (kíméletes)<br>
+    4. Csípőövi tónus harmonizálása<br>
+    5. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    kíméletes mobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a gerinc körüli lágyrészek felszabadítása, 
+    a mellkasi mobilitás javítása, 
+    a fájdalom és merevség csökkentése.
+`,
+
+    "migraena-levis": `
+    <h2>Migraena levis – Enyhe migrén</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    suboccipitalis izmok, m. trapezius pars descendens, 
+    m. sternocleidomastoideus, fascia cervicalis profunda, 
+    temporalis régió lágyrészei.
+
+    <strong>Klinikai háttér:</strong><br>
+    Enyhébb migrénes epizódoknál gyakran megfigyelhető 
+    a nyaki és suboccipitalis izmok tónusfokozódása, 
+    a fascia rétegek letapadása és a cranialis lágyrészek 
+    feszülése. A masszázs célja a tónuscsökkentés és 
+    a fejfájás intenzitásának mérséklése.
+
+    <strong>Tiltások:</strong><br>
+    – akut, erős migrénroham alatt kezelés nem javasolt<br>
+    – erős nyomás a temporalis régióban<br>
+    – hirtelen fejrotáció<br>
+    – agresszív mobilizáció kerülendő
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Suboccipitalis lazítás (statikus, finom technika)<br>
+    2. Fascia cervicalis oldása (felszínes → mély réteg)<br>
+    3. Trapéz felső rostjainak tónuscsökkentése<br>
+    4. SCM kíméletes lazítása<br>
+    5. Cranialis lágyrészek finom mobilizálása<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, suboccipitalis release, 
+    cranialis lágyrész‑mobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a fejfájás intenzitásának csökkentése, 
+    a nyaki és cranialis lágyrészek felszabadítása, 
+    a tónus harmonizálása.
+`,
+
+    "tos": `
+    <h2>Syndroma aperturae thoracis superioris (TOS) – Felső mellkasi kimeneti szindróma</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    m. scalenus anterior/medius, m. pectoralis minor, 
+    clavicula alatti lágyrészek, 
+    plexus brachialis lefutása, 
+    a. subclavia körüli kötőszöveti rétegek.
+
+    <strong>Klinikai háttér:</strong><br>
+    A TOS során a felső mellkasi kimenetben a neurovascularis képletek 
+    (plexus brachialis, a. subclavia) kompresszió alá kerülhetnek.  
+    Gyakori ok a scalenus izmok feszessége, a pectoralis minor rövidülése, 
+    vagy a clavicula alatti kötőszöveti letapadás.  
+    A masszázs célja a kompressziót fenntartó lágyrészek felszabadítása.
+
+    <strong>Tiltások:</strong><br>
+    – erős nyomás a scalenus háromszögben<br>
+    – agresszív mobilizáció<br>
+    – hirtelen karabdukció<br>
+    – neurovascularis tünetek provokálása kerülendő
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Scalenus izmok kíméletes lazítása<br>
+    2. Pectoralis minor felszabadítása (lassú, olvadó technika)<br>
+    3. Clavicula alatti fascia mobilizálása<br>
+    4. Plexus brachialis idegcsúsztatás (kíméletes)<br>
+    5. Vállövi stabilizátorok tónuscsökkentése<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    idegmobilizáció, kíméletes vállövi lazítás
+
+    <strong>Terápiás cél:</strong><br>
+    a neurovascularis kompressziót fenntartó lágyrészek oldása, 
+    a vállövi mobilitás javítása, 
+    a karba sugárzó panaszok csökkentése.
+`,
+"cervicobrachialgia": `
+    <h2>Cervicobrachialgia – Nyakból karba sugárzó fájdalom</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    nyaki paravertebrális izmok (C3–Th2), 
+    m. levator scapulae, m. trapezius felső rost, 
+    m. scalenus anterior/medius, 
+    plexus brachialis lefutása, 
+    vállövi stabilizátorok lágyrészei.
+
+    <strong>Klinikai háttér:</strong><br>
+    A cervicobrachialgia a nyaki szakaszból eredő, karba sugárzó fájdalom, 
+    amelyet gyakran a nyaki paravertebrális izmok feszessége, 
+    a scalenus izmok rövidülése, a plexus brachialis mechanikai irritációja 
+    vagy a vállövi lágyrészek letapadása tart fenn.  
+    A masszázs célja a neuro‑muscularis feszülés csökkentése 
+    és a karba sugárzó panaszok enyhítése.
+
+    <strong>Tiltások:</strong><br>
+    – erős nyomás a scalenus háromszögben<br>
+    – hirtelen fejrotáció<br>
+    – agresszív mobilizáció<br>
+    – karba sugárzó tünetek provokálása kerülendő
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Nyaki paravertebrális lazítás (C3–Th2 szakasz)<br>
+    2. Scalenus izmok kíméletes oldása<br>
+    3. Levator scapulae és trapéz felső rostjainak tónuscsökkentése<br>
+    4. Plexus brachialis idegcsúsztatás (kíméletes technika)<br>
+    5. Vállövi stabilizátorok lazítása<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    paravertebrális lazítás, idegmobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a nyaki és vállövi lágyrészek felszabadítása, 
+    a karba sugárzó fájdalom csökkentése, 
+    a neuro‑muscularis egyensúly helyreállítása.
+`,
+
+    "impingement": `
+    <h2>Impingement syndroma humeri – Vállütközéses szindróma</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    m. supraspinatus, m. infraspinatus, 
+    m. subscapularis, m. deltoideus, 
+    bursa subacromialis, 
+    acromion alatti kötőszöveti rétegek, 
+    rotátorköpeny ínstruktúrái.
+
+    <strong>Klinikai háttér:</strong><br>
+    Az impingement során a rotátorköpeny és a subacromialis bursa 
+    mechanikai ütközésbe kerül az acromion alatt.  
+    Gyakori ok a supraspinatus ín túlterhelése, 
+    a vállövi stabilizátorok diszfunkciója, 
+    valamint a vállízületi tok elülső‑felső feszessége.  
+    A masszázs célja a lágyrészek felszabadítása és a fájdalmas ív csökkentése.
+
+    <strong>Tiltások:</strong><br>
+    – fájdalmas ívben végzett erős mobilizáció<br>
+    – agresszív rotációs húzás<br>
+    – mély nyomás a subacromialis térben<br>
+    – akut gyulladás esetén kezelés nem javasolt
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Deltoideus felszínes lazítása<br>
+    2. Supraspinatus és infraspinatus kíméletes oldása<br>
+    3. Subscapularis belső lazítása (kíméletes technikával)<br>
+    4. Vállízületi tok elülső‑felső részének fascia‑mobilizációja<br>
+    5. Scapulothoracalis lágyrészek harmonizálása<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    vállövi lágyrész‑mobilizáció, kíméletes tokmobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a subacromialis tér felszabadítása, 
+    a rotátorköpeny terhelésének csökkentése, 
+    a fájdalmas mozgástartomány javítása.
+`,
+
+    "capsulitis-adhesiva": `
+    <h2>Capsulitis adhesiva humeri – Befagyott váll</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    vállízületi tok (capsula articularis humeri), 
+    m. subscapularis, m. supraspinatus, 
+    m. infraspinatus, m. teres minor, 
+    deltoideus lágyrészei, 
+    scapulothoracalis kötőszöveti rétegek.
+
+    <strong>Klinikai háttér:</strong><br>
+    A befagyott váll a vállízületi tok gyulladásos‑fibrotikus 
+    megvastagodásával és letapadásával járó állapot.  
+    Jellegzetes a beszűkült mozgástartomány, különösen 
+    az abductio és a kirotáció irányában.  
+    A masszázs célja a tok körüli lágyrészek felszabadítása 
+    és a váll mobilitásának fokozatos javítása.
+
+    <strong>Tiltások:</strong><br>
+    – agresszív toknyújtás<br>
+    – erős rotációs húzás<br>
+    – fájdalomprovokáló mobilizáció<br>
+    – akut gyulladásos szakban kezelés nem javasolt
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Deltoideus felszínes lazítása<br>
+    2. Rotátorköpeny izmainak kíméletes oldása<br>
+    3. Subscapularis belső lazítása (kíméletes technikával)<br>
+    4. Vállízületi tok elülső‑alsó részének fascia‑mobilizációja<br>
+    5. Scapulothoracalis lágyrészek harmonizálása<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    vállövi lágyrész‑mobilizáció, kíméletes tokmobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a vállízületi tok körüli letapadások oldása, 
+    a mozgástartomány fokozatos növelése, 
+    a fájdalom és merevség csökkentése.
+`,
+
+    "cuff-laesio": `
+    <h2>Laesio musculorum cuff rotatorum – Rotátorköpeny sérülés</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    m. supraspinatus, m. infraspinatus, 
+    m. subscapularis, m. teres minor, 
+    rotátorköpeny ínstruktúrái, 
+    bursa subacromialis, 
+    vállízületi tok elülső‑felső része.
+
+    <strong>Klinikai háttér:</strong><br>
+    A rotátorköpeny sérülései gyakran túlterhelés, mikrotrauma, 
+    vagy hirtelen mozdulat következtében alakulnak ki.  
+    A supraspinatus ín érintettsége a leggyakoribb.  
+    A sérülés következtében fájdalom, gyengeség és mozgásbeszűkülés 
+    jelentkezik, különösen abductio és kirotáció során.  
+    A masszázs célja a lágyrészek tehermentesítése és a regeneráció támogatása.
+
+    <strong>Tiltások:</strong><br>
+    – akut szakban erős mobilizáció<br>
+    – fájdalmas ívben végzett erős nyomás<br>
+    – agresszív rotációs húzás<br>
+    – teljes szakadás gyanúja esetén kezelés nem javasolt
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Deltoideus felszínes lazítása<br>
+    2. Supraspinatus és infraspinatus kíméletes oldása<br>
+    3. Subscapularis belső lazítása (kíméletes technikával)<br>
+    4. Vállízületi tok elülső‑felső részének fascia‑mobilizációja<br>
+    5. Scapulothoracalis lágyrészek harmonizálása<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    vállövi lágyrész‑mobilizáció, kíméletes tokmobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a rotátorköpeny terhelésének csökkentése, 
+    a regeneráció támogatása, 
+    a váll mobilitásának javítása.
+`,
+
+    "epicondylitis": `
+    <h2>Epicondylitis humeri lat./med. – Teniszkönyök / Golfkönyök</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    alkar extensor izmok (lateralis forma), 
+    alkar flexor izmok (medialis forma), 
+    epicondylus lateralis/medialis körüli ínstruktúrák, 
+    fascia antebrachii, 
+    könyökízület körüli lágyrészek.
+
+    <strong>Klinikai háttér:</strong><br>
+    Az epicondylitis túlterheléses eredetű ín‑ és enthesis‑irritáció.  
+    A lateralis forma (teniszkönyök) az alkar feszítő izmainak eredését érinti,  
+    a medialis forma (golfkönyök) pedig a hajlító izmok eredését.  
+    Jellemző a fogáserő csökkenése, terhelésre jelentkező éles fájdalom,  
+    valamint a könyök körüli kötőszöveti feszesség.  
+    A masszázs célja a túlterhelt ínstruktúrák tehermentesítése és a fájdalom csökkentése.
+
+    <strong>Tiltások:</strong><br>
+    – akut gyulladás esetén kezelés nem javasolt<br>
+    – erős, direkt nyomás az ín tapadási pontján<br>
+    – agresszív mobilizáció<br>
+    – fájdalomprovokáló fogások kerülendők
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Alkar extensor/flexor izmok felszínes lazítása<br>
+    2. Fascia antebrachii oldása (lassú, olvadó technika)<br>
+    3. Ínstruktúrák kíméletes mobilizálása (direkt nyomás nélkül)<br>
+    4. Könyökízület körüli lágyrészek harmonizálása<br>
+    5. Idegcsúsztatás: n. radialis / n. medianus (forma szerint)<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    alkar lágyrész‑mobilizáció, idegmobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    az ínterhelés csökkentése, 
+    a kötőszöveti feszesség oldása, 
+    a könyök és alkar funkcionális terhelhetőségének javítása.
+`,
+
+    "carpal-tunnel": `
+    <h2>Syndroma canalis carpi – Carpal tunnel szindróma</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    retinaculum flexorum, 
+    m. flexor digitorum superficialis/profundus inai, 
+    m. flexor pollicis longus ina, 
+    n. medianus lefutása, 
+    fascia antebrachii distalis része, 
+    tenyéri lágyrészek.
+
+    <strong>Klinikai háttér:</strong><br>
+    A carpal tunnel szindróma a n. medianus kompressziója 
+    a csukló volaris oldalán.  
+    Gyakori ok a flexor inak túlterhelése, 
+    a retinaculum flexorum feszessége, 
+    valamint a distalis alkar kötőszöveti letapadása.  
+    Jellemző a zsibbadás, éjszakai fájdalom, 
+    gyengült fogáserő és finommozgás‑nehezítettség.  
+    A masszázs célja a kompressziót fenntartó lágyrészek felszabadítása.
+
+    <strong>Tiltások:</strong><br>
+    – direkt, erős nyomás a carpalis alagút felett<br>
+    – agresszív mobilizáció<br>
+    – akut gyulladás esetén kezelés nem javasolt<br>
+    – fájdalomprovokáló fogások kerülendők
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Alkar flexor izmok felszínes lazítása<br>
+    2. Fascia antebrachii distalis részének oldása<br>
+    3. Flexor inak kíméletes mobilizálása (direkt nyomás nélkül)<br>
+    4. Retinaculum flexorum körüli lágyrészek felszabadítása<br>
+    5. N. medianus idegcsúsztatás (kíméletes technikával)<br>
+    6. Tenyéri lágyrészek harmonizálása<br>
+    7. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    alkar lágyrész‑mobilizáció, idegmobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a n. medianus kompressziójának csökkentése, 
+    a flexor inak tehermentesítése, 
+    a kéz funkcionális terhelhetőségének javítása.
+`,
+
+    "tendinitis": `
+    <h2>Tendinitis / Tendinosis – Ín‑eredetű túlterheléses állapotok</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    érintett ín (lokalizáció szerint), 
+    enthesis (ín–csont átmenet), 
+    környező izomzat, 
+    fascia rétegek, 
+    ínhüvely (ha érintett).
+
+    <strong>Klinikai háttér:</strong><br>
+    A tendinitis akut gyulladásos jellegű ín‑irritáció,  
+    míg a tendinosis krónikus, degeneratív folyamat,  
+    amelyben az ín szerkezete megváltozik, megvastagszik, 
+    és csökken a terhelhetősége.  
+    Gyakori ok a túlterhelés, ismétlődő mikrotrauma, 
+    vagy a környező izomzat tartós feszessége.  
+    A masszázs célja az ín körüli lágyrészek tehermentesítése 
+    és a regeneráció támogatása.
+
+    <strong>Tiltások:</strong><br>
+    – akut gyulladás esetén erős nyomás kerülendő<br>
+    – direkt, mély nyomás az ín tapadási pontján<br>
+    – agresszív mobilizáció<br>
+    – fájdalomprovokáló fogások kerülendők
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Érintett izom felszínes lazítása<br>
+    2. Fascia rétegek oldása (lokalizáció szerint)<br>
+    3. Ín körüli lágyrészek kíméletes mobilizálása<br>
+    4. Ínhüvely mobilizálása (ha érintett, finom technikával)<br>
+    5. Idegcsúsztatás (ha a régió érintett idege feszes)<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    lágyrész‑mobilizáció, kíméletes ínhüvely‑mobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    az ín körüli feszülés csökkentése, 
+    a regeneráció támogatása, 
+    a terhelhetőség fokozatos helyreállítása.
+`,
+
+    "gonarthrosis": `
+    <h2>Gonarthrosis (arthrosis genus) – Térdízületi kopás</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    térdízületi tok (capsula articularis genus), 
+    retinaculum patellae med./lat., 
+    m. quadriceps femoris (különösen m. vastus medialis), 
+    tractus iliotibialis, 
+    hamstring izmok, 
+    poplitealis régió lágyrészei, 
+    tibiofemoralis és patellofemoralis ízületi felszínek körüli kötőszövet.
+
+    <strong>Klinikai háttér:</strong><br>
+    A gonarthrosis a térdízület degeneratív elváltozása, 
+    amely a porc elvékonyodásával, a tok megvastagodásával 
+    és a környező lágyrészek feszességével jár.  
+    Jellemző a terhelésre fokozódó fájdalom, 
+    reggeli merevség, mozgásbeszűkülés és instabilitásérzés.  
+    A masszázs célja a lágyrészek tehermentesítése, 
+    a keringés javítása és a fájdalom csökkentése.
+
+    <strong>Tiltások:</strong><br>
+    – akut gyulladás esetén kezelés nem javasolt<br>
+    – direkt, erős nyomás a patellára<br>
+    – agresszív mobilizáció<br>
+    – fájdalomprovokáló fogások kerülendők
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Quadriceps felszínes lazítása (kiemelten VMO)<br>
+    2. Retinaculum patellae med./lat. fascia‑oldása<br>
+    3. Tractus iliotibialis kíméletes mobilizálása<br>
+    4. Hamstring izmok lazítása és nyújtása<br>
+    5. Poplitealis régió lágyrészeinek harmonizálása<br>
+    6. Térdízületi tok körüli fascia‑mobilizáció<br>
+    7. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    quadriceps‑mobilizáció, ITB‑lazítás, hamstring‑mobilizáció, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a térdízület körüli lágyrészek felszabadítása, 
+    a fájdalom csökkentése, 
+    a mozgástartomány és terhelhetőség javítása.
+`,
+
+    "tractus-iliotibialis": `
+    <h2>Syndroma tractus iliotibialis – ITB szindróma</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    tractus iliotibialis (ITB), 
+    m. tensor fasciae latae (TFL), 
+    m. gluteus medius/minimus, 
+    lateralis térdízületi lágyrészek, 
+    fascia lata, 
+    trochanter major körüli kötőszövet.
+
+    <strong>Klinikai háttér:</strong><br>
+    Az ITB szindróma a tractus iliotibialis túlterheléséből, 
+    feszességéből és a lateralis térdízületi képletek irritációjából ered.  
+    Gyakori futóknál, kerékpárosoknál, illetve azoknál, 
+    akiknél a TFL és gluteus medius diszfunkciója fennáll.  
+    Jellemző a lateralis térdfájdalom, pattogó érzés, 
+    valamint a csípő‑térd tengelyének instabilitása.  
+    A masszázs célja a tractus és a kapcsolódó lágyrészek felszabadítása.
+
+    <strong>Tiltások:</strong><br>
+    – direkt, erős nyomás a lateralis térdízület felett<br>
+    – agresszív ITB‑hengerlés<br>
+    – akut gyulladás esetén kezelés nem javasolt<br>
+    – fájdalomprovokáló fogások kerülendők
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. TFL felszínes lazítása<br>
+    2. Gluteus medius/minimus kíméletes oldása<br>
+    3. Fascia lata és ITB lassú, olvadó mobilizálása<br>
+    4. Lateralis térdízületi lágyrészek harmonizálása<br>
+    5. Hamstring lateralis részének lazítása<br>
+    6. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    ITB‑mobilizáció, gluteális lágyrész‑oldás, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a tractus iliotibialis feszességének csökkentése, 
+    a lateralis térdfájdalom enyhítése, 
+    a csípő‑térd tengely stabilitásának javítása.
+`,
+
+    "achillodynia": `
+    <h2>Achillodynia / Tendinitis Achillis – Achilles‑ín túlterhelés</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    Achilles‑ín (tendo Achillis), 
+    m. triceps surae (gastrocnemius med./lat., soleus), 
+    retinaculum musculorum flexorum, 
+    calcaneus enthesis, 
+    fascia cruris, 
+    plantaris régió lágyrészei.
+
+    <strong>Klinikai háttér:</strong><br>
+    Az Achillodynia az Achilles‑ín túlterheléséből, 
+    mikrotraumáiból vagy a triceps surae feszességéből ered.  
+    A tendinitis inkább akut gyulladásos jellegű,  
+    míg a tendinosis krónikus, degeneratív folyamat.  
+    Jellemző a sarok feletti fájdalom, reggeli merevség, 
+    terhelésre fokozódó panasz és az ín megvastagodása.  
+    A masszázs célja az ín körüli lágyrészek tehermentesítése 
+    és a regeneráció támogatása.
+
+    <strong>Tiltások:</strong><br>
+    – akut gyulladás esetén erős nyomás kerülendő<br>
+    – direkt, mély nyomás az ín tapadási pontján (calcaneus)<br>
+    – agresszív mobilizáció<br>
+    – fájdalomprovokáló fogások kerülendők
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Gastrocnemius med./lat. felszínes lazítása<br>
+    2. Soleus mélyebb, lassú oldása<br>
+    3. Fascia cruris mobilizálása (distalis → proximális irány)<br>
+    4. Achilles‑ín körüli lágyrészek kíméletes mobilizálása<br>
+    5. Retinaculum flexorum körüli kötőszövet oldása<br>
+    6. Plantaris régió harmonizálása<br>
+    7. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    triceps surae mobilizáció, ín körüli kíméletes oldás, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    az Achilles‑ín terhelésének csökkentése, 
+    a regeneráció támogatása, 
+    a járás és terhelhetőség javítása.
+`,
+
+    "fasciitis-plantaris": `
+    <h2>Fasciitis plantaris – Talpi fascia túlterhelés</h2>
+
+    <strong>Érintett struktúrák:</strong><br>
+    fascia plantaris, 
+    aponeurosis plantaris med./lat., 
+    m. flexor digitorum brevis, 
+    m. quadratus plantae, 
+    calcaneus enthesis, 
+    Achilles–plantaris lánc kötőszövetei.
+
+    <strong>Klinikai háttér:</strong><br>
+    A fasciitis plantaris a talpi fascia túlterheléséből, 
+    mikrotraumáiból vagy a triceps surae feszességéből ered.  
+    Jellemző a sarok talpi részén jelentkező éles fájdalom, 
+    reggeli első lépésekre fokozódó panasz, 
+    valamint a fascia megvastagodása és feszessége.  
+    A masszázs célja a talpi kötőszövet felszabadítása 
+    és a terhelés csökkentése.
+
+    <strong>Tiltások:</strong><br>
+    – direkt, erős nyomás a calcaneus enthesis felett<br>
+    – agresszív fascia‑húzás<br>
+    – akut gyulladás esetén kezelés nem javasolt<br>
+    – fájdalomprovokáló fogások kerülendők
+
+    <strong>Kezelési sorrend:</strong><br>
+    1. Triceps surae (gastrocnemius/soleus) felszínes lazítása<br>
+    2. Fascia cruris distalis részének oldása<br>
+    3. Talpi fascia lassú, olvadó mobilizálása (med./lat. ív)<br>
+    4. Calcaneus körüli lágyrészek kíméletes oldása<br>
+    5. Plantaris izmok harmonizálása<br>
+    6. Achilles–plantaris lánc nyújtása<br>
+    7. Levezető nyújtás és légzésszinkron
+
+    <strong>Technikák:</strong><br>
+    finom simítás, fascia‑technika, lassú olvadó húzás, 
+    talpi lágyrész‑mobilizáció, triceps surae lazítás, nyújtás
+
+    <strong>Terápiás cél:</strong><br>
+    a talpi fascia feszülésének csökkentése, 
+    a sarokfájdalom enyhítése, 
+    a járás és terhelhetőség javítása.
+`,
+
+    ... összes többi ...
+};   ← E‑szint vége
+
+// kattintáskezelő
+document.querySelectorAll(...)
+</script>
+
+</body>
+</html>
 
     "cephalgia": `
         <h2>Cephalgia tensionalis – Izomeredetű fejfájás</h2>
@@ -250,6 +1283,7 @@ document.querySelectorAll('.diagnosis-item').forEach(item => {
 
 
  
+
 
 
 
